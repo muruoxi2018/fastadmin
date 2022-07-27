@@ -5,6 +5,7 @@ namespace app\index\controller;
 use app\common\controller\Frontend;
 use think\Lang;
 use think\Response;
+use think\Db;
 
 /**
  * Ajax异步请求接口
@@ -59,6 +60,29 @@ class Ajax extends Frontend
     public function upload()
     {
         return action('api/common/upload');
+    }
+
+    /**
+     * 读取分类数据,联动列表
+     */
+    public function category()
+    {
+        $type = $this->request->get('type', '');
+        $pid = $this->request->get('pid', '');
+
+        //$this->success($type);
+        $where = ['status' => 'normal'];
+        $categorylist = null;
+        if ($pid || $pid === '0') {
+            $where['pid'] = $pid;
+        }
+        if ($type) {
+            $where['type'] = $type;
+        }
+
+        $categorylist = Db::name('category')->where($where)->field('id as value,name')->order('weigh desc,id desc')->select();
+
+        $this->success('', '', $categorylist);
     }
 
 }

@@ -2,13 +2,34 @@ h2.page-header {
   margin: 10px 0 25px 0;
   padding-bottom: 15px;
 }
+
 .user-baseinfo {
   margin-bottom: 25px;
+  border-bottom: 1px solid #f5f5f5;
 }
+
 .user-baseinfo table tr td {
   color: #999;
 }
+
+.user-checking {
+  margin-bottom: 25px;
+}
+
+.user-checking h3{
+  margin: 10px 0 25px 0;
+  height: 50px;
+    line-height: 31px;
+    font-size: 18px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.user-checking .title{
+  color: #999;
+}
 @media (min-width: 992px) {
+
   .user-center .avatar-text,
   .user-center .avatar-img {
     height: 150px;
@@ -17,18 +38,22 @@ h2.page-header {
     line-height: 150px;
     font-size: 70px;
   }
+
   .user-center .avatar-img {
     font-size: 0;
   }
+
   .user-center .avatar-img img {
     height: 150px;
     width: 150px;
     border-radius: 150px;
   }
 }
+
 .sidebar-toggle {
   display: none;
 }
+
 @media (max-width: 991px) {
   .sidenav {
     position: fixed;
@@ -46,6 +71,7 @@ h2.page-header {
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
+
   .sidebar-toggle {
     display: block;
     position: fixed;
@@ -62,12 +88,15 @@ h2.page-header {
     z-index: 999999;
   }
 }
+
 body.sidebar-open .sidenav {
   left: 0;
   width: 250px;
   box-shadow: 0 6px 27px rgba(0, 0, 0, 0.075);
 }
+
 body.sidebar-open .sidebar-toggle i:before {
   content: "\f00d";
 }
+
 /*# sourceMappingURL=user.css.map */

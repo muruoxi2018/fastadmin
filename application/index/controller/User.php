@@ -7,10 +7,10 @@ use app\common\controller\Frontend;
 use app\common\library\Ems;
 use app\common\library\Sms;
 use app\common\model\Attachment;
+use app\common\model\UserGrading;
 use think\Config;
 use think\Cookie;
 use think\Hook;
-use think\Session;
 use think\Validate;
 
 /**
@@ -129,8 +129,10 @@ class User extends Frontend
         }
         //判断来源
         $referer = $this->request->server('HTTP_REFERER');
-        if (!$url && (strtolower(parse_url($referer, PHP_URL_HOST)) == strtolower($this->request->host()))
-            && !preg_match("/(user\/login|user\/register|user\/logout)/i", $referer)) {
+        if (
+            !$url && (strtolower(parse_url($referer, PHP_URL_HOST)) == strtolower($this->request->host()))
+            && !preg_match("/(user\/login|user\/register|user\/logout)/i", $referer)
+        ) {
             $url = $referer;
         }
         $this->view->assign('captchaType', config('fastadmin.user_register_captcha'));
@@ -184,8 +186,10 @@ class User extends Frontend
         }
         //判断来源
         $referer = $this->request->server('HTTP_REFERER');
-        if (!$url && (strtolower(parse_url($referer, PHP_URL_HOST)) == strtolower($this->request->host()))
-            && !preg_match("/(user\/login|user\/register|user\/logout)/i", $referer)) {
+        if (
+            !$url && (strtolower(parse_url($referer, PHP_URL_HOST)) == strtolower($this->request->host()))
+            && !preg_match("/(user\/login|user\/register|user\/logout)/i", $referer)
+        ) {
             $url = $referer;
         }
         $this->view->assign('url', $url);
@@ -333,5 +337,94 @@ class User extends Frontend
         $this->view->assign('mimetype', $mimetype);
         $this->view->assign("mimetypeList", \app\common\model\Attachment::getMimetypeList());
         return $this->view->fetch();
+    }
+
+    /**
+     * 我的消息
+     */
+    public function message()
+    {
+        $this->view->assign('title', __('Message'));
+        return $this->view->fetch();
+    }
+    /**
+     * 我的认证
+     */
+    public function grading()
+    {
+        if ($this->request->isAjax()) {
+            $model = new UserGrading();
+            $offset = $this->request->get("offset", 0);
+            $limit = $this->request->get("limit", 0);
+            $total = $model
+                ->where('user_id', $this->auth->id)
+                ->order("id", "DESC")
+                ->count();
+
+            $list = $model
+                ->where('user_id', $this->auth->id)
+                ->order("id", "DESC")
+                ->limit($offset, $limit)
+                ->field(["createtime", "state", "unit","memo","type"])
+                ->select();
+                
+            foreach ($list as $key => $value) {
+                $list[$key]['type'] = $value->category->name;
+            }
+            //$this->error();
+            $result = array("total" => $total, "rows" => $list);
+
+            return json($result);
+        }
+        $this->view->assign('title', __('Grading'));
+        return $this->view->fetch();
+    }
+
+
+    /**
+     * 比赛记录
+     */
+    public function record()
+    {
+        $this->view->assign('title', __('Record'));
+        return $this->view->fetch();
+    }
+    /**
+     * 我的培训
+     */
+    public function train()
+    {
+        $this->view->assign('title', __('Train'));
+        return $this->view->fetch();
+    }
+
+
+    /**
+     * 添加认证
+     */
+    public function addgrading()
+    {
+        if ($this->request->isPost()) {
+            $type = $this->request->post('second');
+            $unit = $this->request->post('unit');
+            $num = $this->request->post('num');
+            $file = $this->request->post('c-file');
+            $userinfo = $this->auth->getUserinfo();
+            $data = array(
+                "user_id" => $userinfo['id'],
+                "type" => $type,
+                "unit" => $unit,
+                "num" => $num,
+                "file" => $file,
+                "state" => "待审核"
+            );
+            $model = new UserGrading();
+            $res = $model->save($data);
+            if ($res) {
+                $this->success('提交成功');
+            } else {
+                $this->error('提交失败');
+            }
+        }
     }
 }

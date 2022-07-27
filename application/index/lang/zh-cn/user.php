@@ -83,4 +83,15 @@ return [
     'Createtime'                                 => '创建日期',
     'Uploadtime'                                 => '上传时间',
     'Storage'                                    => '存储引擎',
+    'Message' => '我的消息',
+    'Grading' => '我的认证',
+    'Train'=>'我的培训',
+    'Record'=>'比赛记录',
+    'Apply for Grading' => '申请认证',
+    'createtime'=>'申报时间',
+    'type'=>'认证类型',
+    'unit'=>'认证单位',
+    'state'=>'认证结果',
+    'memo'=>'备注',
+    "Group"=>"用户组别"
 ];

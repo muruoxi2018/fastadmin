@@ -3,10 +3,35 @@
     {:hook('user_sidenav_before')}
     <ul class="list-group">
         <li class="list-group-heading">{:__('Member center')}</li>
-        <li class="list-group-item {:check_nav_active('user/index')}"> <a href="{:url('user/index')}"><i class="fa fa-user-circle fa-fw"></i> {:__('User center')}</a> </li>
-        <li class="list-group-item {:check_nav_active('user/profile')}"> <a href="{:url('user/profile')}"><i class="fa fa-user-o fa-fw"></i> {:__('Profile')}</a> </li>
-        <li class="list-group-item {:check_nav_active('user/changepwd')}"> <a href="{:url('user/changepwd')}"><i class="fa fa-key fa-fw"></i> {:__('Change password')}</a> </li>
-        <li class="list-group-item {:check_nav_active('user/logout')}"> <a href="{:url('user/logout')}"><i class="fa fa-sign-out fa-fw"></i> {:__('Sign out')}</a> </li>
+        <li class="list-group-item {:check_nav_active('user/index')}">
+            <a href="{:url('user/index')}">
+                <i class="fa fa-user-o fa-fw"></i> {:__('User center')}
+            </a>
+        </li>
+        <li class="list-group-item {:check_nav_active('user/profile')}"> <a href="{:url('user/profile')}"><i
+                    class="fa fa-address-card-o fa-fw"></i> {:__('Profile')}</a> </li>
+        <li class="list-group-item {:check_nav_active('user/message')}">
+            <a href="{:url('user/message')}">
+                <i class="fa fa-commenting-o fa-fw"></i> {:__('Message')}
+            </a>
+        </li>
+        <li class="list-group-item {:check_nav_active('user/grading')}">
+            <a href="{:url('user/grading')}">
+                <i class="fa fa-star-o fa-fw"></i> {:__('Grading')}
+            </a>
+        </li>
+        
+        <li class="list-group-item {:check_nav_active('user/train')}"> <a href="{:url('user/train')}"><i
+                    class="fa fa-graduation-cap fa-fw"></i> {:__('Train')}</a></li>
+
+        
+        <li class="list-group-item {:check_nav_active('user/record')}"> <a href="{:url('user/record')}"><i
+                    class="fa fa-flag-o fa-fw"></i> {:__('Record')}</a></li>
+        
+        <li class="list-group-item {:check_nav_active('user/changepwd')}"> <a href="{:url('user/changepwd')}"><i
+                    class="fa fa-key fa-fw"></i> {:__('Change password')}</a> </li>
+        <li class="list-group-item {:check_nav_active('user/logout')}"> <a href="{:url('user/logout')}"><i
+                    class="fa fa-sign-out fa-fw"></i> {:__('Sign out')}</a> </li>
     </ul>
     {:hook('user_sidenav_after')}
 </div>

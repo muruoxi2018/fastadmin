@@ -4,6 +4,7 @@ namespace app\api\controller;
 
 use app\common\controller\Api;
 use app\common\model\User;
+use think\db;
 
 /**
  * 验证接口
@@ -157,6 +158,18 @@ class Validate extends Api
         $event = $this->request->post('event');
         if (!\app\common\library\Ems::check($email, $captcha, $event)) {
             $this->error(__('验证码不正确'));
+        }
+        $this->success();
+    }
+
+    /**
+     * 检测证书编号唯一
+     */
+    public function check_usergrading_unique(){
+        $usergrading_id = $this->request->post('num');
+        $count = DB::name('user_grading')->where('num', '=', $usergrading_id)->count();
+        if ($count > 0) {
+            $this->error(__('该证书编号已经存在'));
         }
         $this->success();
     }

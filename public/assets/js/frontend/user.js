@@ -97,6 +97,66 @@ define(['jquery', 'bootstrap', 'frontend', 'form', 'template'], function ($, und
                 });
             });
         },
+        grading:function () {
+            Form.api.bindevent($("#grading-form"));
+            require(['table'], function (Table) {
+
+                // 初始化表格参数配置
+                Table.api.init({
+                    extend: {
+                        index_url: 'user/grading',
+                    }
+                });  
+
+                var table = $("#table");
+
+                // 初始化表格
+                table.bootstrapTable({
+                    url: $.fn.bootstrapTable.defaults.extend.index_url,
+                    sortName: 'createtime',
+                    showToggle: false,
+                    showExport: false,
+                    fixedColumns: true,
+                    fixedRightNumber: 1,
+                    striped:true,
+                    commonSearch: false,
+                    search:false,
+                    columns: [
+                        [
+                            {field: 'createtime', title: __('createtime'), sortable: true, formatter: Table.api.formatter.datetime, datetimeFormat: 'YYYY-MM-DD',operate: false},
+                            {field: 'type', title: __('type'), operate: false},
+                            {field: 'unit', title: __('unit'), operate: false},
+                            {field: 'state', title: __('state'), operate: false, sortable: true},
+                            {field: 'memo', title: __('memo'), operate: false},
+                        ]
+                    ]
+                });
+
+                // 为表格绑定事件
+                Table.api.bindevent(table);
+
+            });
+            
+            $(document).on("click", ".pull-right", function () {
+                var that = this;
+                var id = $(this).data("type") + "tpl";
+                var content = Template(id, {});
+                Layer.open({
+                    type: 1,
+                    zIndex:50,
+                    title: "申请认证",
+                    area: ["400px", "350px"],
+                    content: content,
+                    success: function (layero) {
+                        var form = $("form", layero);
+                        Form.api.bindevent(form, function (data) {
+                            location.reload();
+                            Layer.closeAll();
+                        });
+                    }
+                });
+            });
+        },
         attachment: function () {
             require(['table'], function (Table) {
 
