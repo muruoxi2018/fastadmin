@@ -42,4 +42,6 @@ return array (
     'category2' => '分类二',
     'custom' => '自定义',
   ),
+  'keywords' => '',
+  'description' => '',
 );

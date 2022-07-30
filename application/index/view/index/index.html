@@ -1,750 +1,527 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <meta name="renderer" content="webkit">
-
-    <title>{$site.name|htmlentities}</title>
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <link rel="shortcut icon" href="__CDN__/assets/img/favicon.ico" />
-    <!-- Bootstrap Core CSS -->
-    <link href="__CDN__/assets/libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="__CDN__/assets/css/index.css" rel="stylesheet">
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="__CDN__/assets/libs/jquery/dist/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="__CDN__/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-            <script src="https://cdn.staticfile.org/html5shiv/3.7.3/html5shiv.min.js"></script>
-            <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-    <script src="__CDN__/assets/js/index.js"></script>
-    <script src="__CDN__/assets/js/countUp.min.js"></script>
-</head>
-
-<body>
-    <!-- 整站通用的头部及导航条 -->
-    <div id="header">
-        <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" style="padding:0 0 0 15px;" href="#"><img alt="Logo"
-                            style="max-width:130px;" src=""></a>
-                </div>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="#">首页 <span class="sr-only">(current)</span></a>
-                            <p class="line-top hidden-xs"></p>
-                        </li>
-                        <li><a href="#">赛事活动</a></li>
-                        <li><a href="#">培训服务</a></li>
-                        <li><a href="#">文件通知</a></li>
-                        <li><a href="#">资料下载</a></li>
-                        <li><a href="{:url('index/user/index')}">会员专区</a></li>
-                        <li><a href="#">关于我们</a></li>
-                    </ul>
-                </div>
-                <!-- /.navbar-collapse -->
-            </div>
-            <!-- /.container-fluid -->
-        </nav>
-    </div>
-    <!-- 整站通用的头部及导航条 -->
-    <!-- 全屏轮播图 -->
-    <div id="carousel-example-generic" class="carousel slide my-slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-        </ol>
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-            <div class="item active">
-                <a target="_blank" href="#">
-                    <img src="/assets/img/Slide1.jpg" alt="Slide1">
-                </a>
-            </div>
-            <div class="item">
-                <a target="_blank" href="#">
-                    <img src="/assets/img/Slide1.jpg" alt="Slide2">
-                </a>
-            </div>
+<!-- 全屏轮播图 -->
+<div id="carousel-example-generic" class="carousel slide my-slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    </ol>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <a target="_blank" href="#">
+                <img src="/assets/img/Slide1.jpg" alt="Slide1">
+            </a>
+        </div>
+        <div class="item">
+            <a target="_blank" href="#">
+                <img src="/assets/img/Slide1.jpg" alt="Slide2">
+            </a>
         </div>
     </div>
-    <!-- 全屏轮播图 -->
-    <!-- 我们的成绩 -->
-    <div class="index-row our-data">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 main-title">
-                    <h2 class="h1">我们的成绩</h2>
+</div>
+<!-- 全屏轮播图 -->
+<!-- 我们的成绩 -->
+<div class="index-row our-data">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 main-title">
+                <h2 class="h1">我们的成绩</h2>
 
-                    <p class="line line-big"></p>
+                <p class="line line-big"></p>
 
-                    <h2>
-                        <small>2013年1月1日至{:date('Y年m月d日',time())}，我们的整体数据。</small>
-                    </h2>
+                <h2>
+                    <small>2013年1月1日至{:date('Y年m月d日',time())}，我们的整体数据。</small>
+                </h2>
+            </div>
+            <div class="col-sm-4 our-data-item sum-apply">
+                <div class="number-wrapper">
+                    <span id="sum-apply" class="run-number" data-to="240">266</span>场
                 </div>
-                <div class="col-sm-4 our-data-item sum-apply">
-                    <div class="number-wrapper">
-                        <span id="sum-apply" class="run-number" data-to="240">266</span>场
-                    </div>
-                    <h4 class="title">组织校级以上赛事</h4>
+                <h4 class="title">组织校级以上赛事</h4>
+            </div>
+            <div class="col-sm-4 our-data-item sum-rate">
+                <div class="number-wrapper">
+                    <span id="sum-rate" class="run-number" data-to="240">34</span>个
                 </div>
-                <div class="col-sm-4 our-data-item sum-rate">
-                    <div class="number-wrapper">
-                        <span id="sum-rate" class="run-number" data-to="240">34</span>个
-                    </div>
-                    <h4 class="title">成员社团数</h4>
+                <h4 class="title">成员社团数</h4>
+            </div>
+            <div class="col-sm-4 our-data-item sum-urgent">
+                <div class="number-wrapper">
+                    <span id="sum-urgent" class="run-number" data-to="240">10273</span>人
                 </div>
-                <div class="col-sm-4 our-data-item sum-urgent">
-                    <div class="number-wrapper">
-                        <span id="sum-urgent" class="run-number" data-to="240">10273</span>人
-                    </div>
-                    <h4 class="title">累计会员数</h4>
-                </div>
-                <!-- <div class="col-sm-3 our-data-item urgent-rate">
+                <h4 class="title">累计会员数</h4>
+            </div>
+            <!-- <div class="col-sm-3 our-data-item urgent-rate">
                     <div class="number-wrapper">
                         <span id="urgent-rate" class="run-number" data-to="240">100</span>%
                     </div>
                     <h4 class="title">社会反响率</h4>
                 </div> -->
-            </div>
         </div>
     </div>
-    <!-- 我们的成绩 -->
-    <!-- 我们的优势 -->
-    <div class="index-row our-whyus">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 main-title">
-                    <h2 class="h1">我们的优势</h2>
+</div>
+<!-- 我们的成绩 -->
+<!-- 我们的优势 -->
+<div class="index-row our-whyus">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 main-title">
+                <h2 class="h1">我们的优势</h2>
 
-                    <p class="line line-big"></p>
+                <p class="line line-big"></p>
 
-                    <h2>
-                        <small>每一场比赛都值得全力以赴，每一位选手都应该被认真对待。</small>
-                    </h2>
-                </div>
-                <div class="col-sm-3">
-                    <div class="our-whyus-item">
-                        <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                <h2>
+                    <small>每一场比赛都值得全力以赴，每一位选手都应该被认真对待。</small>
+                </h2>
+            </div>
+            <div class="col-sm-3">
+                <div class="our-whyus-item">
+                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
 
-                        <h3 class="title">七年活动经验</h3>
+                    <h3 class="title">七年活动经验</h3>
 
-                        <p>从2013年开始举办高校甲级联赛至今，积累了丰富的大型赛事活动经验。</p>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="our-whyus-item">
-                        <span style="font-size: 80px;" class="glyphicon glyphicon-screenshot" aria-hidden="true"></span>
-
-                        <h3 class="title">一体化组织能力</h3>
-
-                        <p>从活动筹备到应急管理，无论是场地、设备，都能拿出令社会满意的最优方案。</p>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="our-whyus-item">
-                        <span style="font-size: 80px;" class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
-
-                        <h3 class="title">高效率即时响应</h3>
-
-                        <p>遇到任何疑问，您都会在第一时间得到我们的正面回应，并进行相关处理。</p>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="our-whyus-item">
-                        <span style="font-size: 80px;" class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
-
-                        <h3 class="title">精益求精的态度</h3>
-
-                        <p>死磕完美活动，对活动流程中的细节反复推演，做令选手和社会满意的赛事。</p>
-                    </div>
+                    <p>从2013年开始举办高校甲级联赛至今，积累了丰富的大型赛事活动经验。</p>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- 我们的优势 -->
-    <!-- 我们的服务 -->
-    <div class="index-row our-service">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 main-title">
-                    <h2 class="h1">我们的服务</h2>
+            <div class="col-sm-3">
+                <div class="our-whyus-item">
+                    <span style="font-size: 80px;" class="glyphicon glyphicon-screenshot" aria-hidden="true"></span>
 
-                    <p class="line line-big"></p>
+                    <h3 class="title">一体化组织能力</h3>
 
-                    <h2>
-                        <small>各级各类棋牌赛事，我们都提供技术支持。</small>
-                    </h2>
+                    <p>从活动筹备到应急管理，无论是场地、设备，都能拿出令社会满意的最优方案。</p>
                 </div>
-                <div class="col-sm-12 text-center card-box">
-                    <ul class="card-area">
-                        <li class="card-item card-active">
-                            <div class="card-title">
-                                <h4>裁判员培训</h4>
+            </div>
+            <div class="col-sm-3">
+                <div class="our-whyus-item">
+                    <span style="font-size: 80px;" class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
 
-                                <p>官方发证，成绩可查</p>
+                    <h3 class="title">高效率即时响应</h3>
 
-                            </div>
-                            <div class="card-content">
-                                <p>国家级裁判讲解</p>
-
-                                <p>最新版棋规</p>
-
-                                <p>远程视频演示</p>
-
-                                <p>实操案例讲解</p>
-
-                                <p>全程解答所有疑问</p>
-                                <a href="#" class="btn btn-outline-inverse">查看详情</a>
-
-                            </div>
-                        </li>
-                        <li class="card-item">
-                            <div class="card-title">
-                                <h4>运动员培训</h4>
-
-                                <p>地方大师，在线答疑</p>
-                            </div>
-                            <div class="card-content">
-                                <p>集训+个别指导</p>
-
-                                <p>一对一方案定制</p>
-
-                                <p>赛事优先推荐</p>
-
-                                <p>线上+线下培训</p>
-
-                                <p>全程解答所有疑问</p>
-                                <a href="#" class="btn btn-outline-blue">查看详情</a>
-                            </div>
-                        </li>
-                        <li class="card-item">
-                            <div class="card-title">
-                                <h4>技术支持</h4>
-
-                                <p>7*24h真人在线</p>
-                            </div>
-                            <div class="card-content">
-                                <p>远程比赛编排</p>
-
-                                <p>远程赛事答疑</p>
-
-                                <p>远程棋局执裁</p>
-
-                                <p>一对一远程解决</p>
-
-                                <p>全程解答所有疑问</p>
-                                <a href="#" class="btn btn-outline-blue">查看详情</a>
-                            </div>
-                        </li>
-                        <li class="card-item">
-                            <div class="card-title">
-                                <h4>赛事承办</h4>
-
-                                <p>30+人专业团队</p>
-                            </div>
-                            <div class="card-content">
-                                <p>中小幼各级赛事</p>
-
-                                <p>各类高校赛事</p>
-
-                                <p>地方成人赛事</p>
-
-                                <p>跨省/国家级赛事</p>
-
-                                <p>各种案例有迹可循</p>
-                                <a href="#" class="btn btn-outline-blue">查看详情</a>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="clearfix"></div>
+                    <p>遇到任何疑问，您都会在第一时间得到我们的正面回应，并进行相关处理。</p>
                 </div>
-                <div class="col-sm-12 text-center">
-                    <a href="#" class="btn btn-outline-blue btn-lg">查看更多服务</a>
+            </div>
+            <div class="col-sm-3">
+                <div class="our-whyus-item">
+                    <span style="font-size: 80px;" class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+
+                    <h3 class="title">精益求精的态度</h3>
+
+                    <p>死磕完美活动，对活动流程中的细节反复推演，做令选手和社会满意的赛事。</p>
                 </div>
             </div>
         </div>
     </div>
-    <!-- 我们的服务 -->
-    <!-- 社会的认同 -->
-    <div class="index-row our-example">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 main-title">
-                    <h2 class="h1">社会的认同</h2>
+</div>
+<!-- 我们的优势 -->
+<!-- 我们的服务 -->
+<div class="index-row our-service">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 main-title">
+                <h2 class="h1">我们的服务</h2>
 
-                    <p class="line line-big"></p>
+                <p class="line line-big"></p>
 
-                    <h2>
-                        <small>弘扬传统文化，推广棋类赛事，是我们存在的根本价值。</small>
-                    </h2>
-                </div>
-                <div class="col-sm-4 our-example-box">
-                    <div class="our-example-popover">
-                        <div class="popover top">
-                            <div class="arrow"></div>
-                            <h3 class="popover-title-touxiang">
-                                <img src="http://www.clantrip.com/static/images/pingjia1.jpg">
-                            </h3>
+                <h2>
+                    <small>各级各类棋牌赛事，我们都提供技术支持。</small>
+                </h2>
+            </div>
+            <div class="col-sm-12 text-center card-box">
+                <ul class="card-area">
+                    <li class="card-item card-active">
+                        <div class="card-title">
+                            <h4>裁判员培训</h4>
 
-                            <div class="popover-content">
-                                <p class="popover-content-text">
-                                    在活动组织方面，你们已经做到了相当高的水准，如流水线式的活动衔接，背后必定是千磨与苦练。
-                                    在你们身上我看到了年轻人奋发有为的激情，继续加油。
-                                </p>
+                            <p>官方发证，成绩可查</p>
 
-                                <div class="popover-content-tag">
-                                    <span class="bingzhong">赛事承办</span>
-
-                                    <div class="position-address">
-                                        <figure class="position-icon"></figure>
-                                        <span>某省级领导</span>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
-                    </div>
-                    <figure class="glly-icon ac-figure-icon"></figure>
-                </div>
-                <div class="col-sm-4 our-example-box">
-                    <div class="our-example-popover">
-                        <div class="popover top">
-                            <div class="arrow"></div>
-                            <h3 class="popover-title-touxiang">
-                                <img src="http://www.clantrip.com/static/images/pingjia2.jpg">
-                            </h3>
+                        <div class="card-content">
+                            <p>国家级裁判讲解</p>
 
-                            <div class="popover-content">
-                                <p class="popover-content-text">
-                                    与你们合作是一件很轻松的事情，我能用更少的时间掌握更多的知识。培训中遇到的问题随时都能获得专业性的解答，经常让我茅塞顿开。
-                                </p>
+                            <p>最新版棋规</p>
 
-                                <div class="popover-content-tag">
-                                    <span class="bingzhong">裁判员培训</span>
+                            <p>远程视频演示</p>
 
-                                    <div class="position-address">
-                                        <figure class="position-icon"></figure>
-                                        <span>某一级裁判</span>
-                                    </div>
-                                </div>
-                            </div>
+                            <p>实操案例讲解</p>
+
+                            <p>全程解答所有疑问</p>
+                            <a href="#" class="btn btn-outline-inverse">查看详情</a>
+
                         </div>
-                    </div>
-                    <figure class="glly-icon ac-figure-icon"></figure>
-                </div>
-                <div class="col-sm-4 our-example-box">
-                    <div class="our-example-popover">
-                        <div class="popover top">
-                            <div class="arrow"></div>
-                            <h3 class="popover-title-touxiang">
-                                <img src="http://www.clantrip.com/static/images/pingjia3.jpg">
-                            </h3>
+                    </li>
+                    <li class="card-item">
+                        <div class="card-title">
+                            <h4>运动员培训</h4>
 
-                            <div class="popover-content">
-                                <p class="popover-content-text">
-                                    大学经常感到无聊，想找棋力相当的棋友交流，经过同学推荐，才发现原来身边还有这么多有共同兴趣爱好的人。
-                                    让我们一起进步，一起加油！
-                                </p>
-
-                                <div class="popover-content-tag">
-                                    <span class="bingzhong">运动员培训</span>
-
-                                    <div class="position-address">
-                                        <figure class="position-icon"></figure>
-                                        <span>某象棋运动员</span>
-                                    </div>
-                                </div>
-                            </div>
+                            <p>地方大师，在线答疑</p>
                         </div>
-                    </div>
-                    <figure class="glly-icon ac-figure-icon"></figure>
-                </div>
+                        <div class="card-content">
+                            <p>集训+个别指导</p>
 
+                            <p>一对一方案定制</p>
+
+                            <p>赛事优先推荐</p>
+
+                            <p>线上+线下培训</p>
+
+                            <p>全程解答所有疑问</p>
+                            <a href="#" class="btn btn-outline-blue">查看详情</a>
+                        </div>
+                    </li>
+                    <li class="card-item">
+                        <div class="card-title">
+                            <h4>技术支持</h4>
+
+                            <p>7*24h真人在线</p>
+                        </div>
+                        <div class="card-content">
+                            <p>远程比赛编排</p>
+
+                            <p>远程赛事答疑</p>
+
+                            <p>远程棋局执裁</p>
+
+                            <p>一对一远程解决</p>
+
+                            <p>全程解答所有疑问</p>
+                            <a href="#" class="btn btn-outline-blue">查看详情</a>
+                        </div>
+                    </li>
+                    <li class="card-item">
+                        <div class="card-title">
+                            <h4>赛事承办</h4>
+
+                            <p>30+人专业团队</p>
+                        </div>
+                        <div class="card-content">
+                            <p>中小幼各级赛事</p>
+
+                            <p>各类高校赛事</p>
+
+                            <p>地方成人赛事</p>
+
+                            <p>跨省/国家级赛事</p>
+
+                            <p>各种案例有迹可循</p>
+                            <a href="#" class="btn btn-outline-blue">查看详情</a>
+                        </div>
+                    </li>
+                </ul>
                 <div class="clearfix"></div>
             </div>
+            <div class="col-sm-12 text-center">
+                <a href="#" class="btn btn-outline-blue btn-lg">查看更多服务</a>
+            </div>
         </div>
     </div>
-    <!-- 客户的鼓励 -->
-    <!-- 最新资讯 -->
-    <div class="index-row our-news">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 main-title">
-                    <h2 class="h1">最新资讯</h2>
+</div>
+<!-- 我们的服务 -->
+<!-- 社会的认同 -->
+<div class="index-row our-example">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 main-title">
+                <h2 class="h1">社会的认同</h2>
 
-                    <p class="line line-big"></p>
+                <p class="line line-big"></p>
 
-                    <h2>
-                        <small>带您关注最新的动态与新闻。</small>
-                    </h2>
-                </div>
-                <div class="col-sm-6">
-                    <div class="media our-news-item">
-                        <div class="media-left">
-                            <a class="thumbnail" href="#">
-                                <img class="media-object"
-                                    src="http://www.clantrip.com/uploadfile/2017/0509/20170509103625563.jpg"
-                                    alt="92名中国民工被欠薪受困塞班岛 华裔中介扣钱逃匿">
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <a href="#">
-                                <h4 class="media-heading">92名中国民工被欠薪受困塞班岛 华裔中介扣钱逃匿</h4>
-                            </a>
-                            <div class="dynamic-li">
-                                <span>时间：2017-05-09 </span>
-                            </div>
-                            <p>他们大部分来自东北，在去年10月份时，其所在城市的劳务中介公司找到他们，介绍了塞班岛的工作，中介给他们开出每天工作8小时日薪300元、如果加班每小时50元的待遇。民工称他们当时也没
+                <h2>
+                    <small>弘扬传统文化，推广棋类赛事，是我们存在的根本价值。</small>
+                </h2>
+            </div>
+            <div class="col-sm-4 our-example-box">
+                <div class="our-example-popover">
+                    <div class="popover top">
+                        <div class="arrow"></div>
+                        <h3 class="popover-title-touxiang">
+                            <img src="http://www.clantrip.com/static/images/pingjia1.jpg">
+                        </h3>
+
+                        <div class="popover-content">
+                            <p class="popover-content-text">
+                                在活动组织方面，你们已经做到了相当高的水准，如流水线式的活动衔接，背后必定是千磨与苦练。
+                                在你们身上我看到了年轻人奋发有为的激情，继续加油。
                             </p>
-                            <div class="dynamic-li">
-                                <a href="#">[详细]</a>
-                                <span>作者：中岚签证 <span class="hidden-xs">clantrip.com</span> </span>
+
+                            <div class="popover-content-tag">
+                                <span class="bingzhong">赛事承办</span>
+
+                                <div class="position-address">
+                                    <figure class="position-icon"></figure>
+                                    <span>某省级领导</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6">
-                    <div class="media our-news-item">
-                        <div class="media-left">
-                            <a class="thumbnail" href="#">
-                                <img class="media-object"
-                                    src="http://www.clantrip.com/uploadfile/2017/0508/20170508061916221.png"
-                                    alt="2017年赴美签证新规定">
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <a href="#">
-                                <h4 class="media-heading">2017年赴美签证新规定</h4>
-                            </a>
-                            <div class="dynamic-li">
-                                <span>时间：2017-05-08 </span>
-                            </div>
-                            <p>美国国务院领事事务局2016年10月6日公告，自2016年11月1日开始，申请美国护照或签证，要使用没有戴眼镜的照片。</p>
-                            <div class="dynamic-li">
-                                <a href="#">[详细]</a>
-                                <span>作者：中岚签证 <span class="hidden-xs">clantrip.com</span> </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="media our-news-item">
-                        <div class="media-left">
-                            <a class="thumbnail" href="#">
-                                <img class="media-object"
-                                    src="http://www.clantrip.com/uploadfile/2017/0508/20170508052848613.jpg"
-                                    alt="美国有多少人缴纳个人所得税及其它">
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <a href="#">
-                                <h4 class="media-heading">美国有多少人缴纳个人所得税及其它</h4>
-                            </a>
-                            <div class="dynamic-li">
-                                <span>时间：2017-05-08 </span>
-                            </div>
-                            <p>前几天我们有一篇博文介绍了美国个人所得税税率，不少网友提出许多有关美国个税税收的问题，这里就集中回答。由于个税牵涉到联邦所得税以及 </p>
-                            <div class="dynamic-li">
-                                <a href="#">[详细]</a>
-                                <span>作者：中岚签证 <span class="hidden-xs">clantrip.com</span> </span>
+                <figure class="glly-icon ac-figure-icon"></figure>
+            </div>
+            <div class="col-sm-4 our-example-box">
+                <div class="our-example-popover">
+                    <div class="popover top">
+                        <div class="arrow"></div>
+                        <h3 class="popover-title-touxiang">
+                            <img src="http://www.clantrip.com/static/images/pingjia2.jpg">
+                        </h3>
+
+                        <div class="popover-content">
+                            <p class="popover-content-text">
+                                与你们合作是一件很轻松的事情，我能用更少的时间掌握更多的知识。培训中遇到的问题随时都能获得专业性的解答，经常让我茅塞顿开。
+                            </p>
+
+                            <div class="popover-content-tag">
+                                <span class="bingzhong">裁判员培训</span>
+
+                                <div class="position-address">
+                                    <figure class="position-icon"></figure>
+                                    <span>某一级裁判</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6">
-                    <div class="media our-news-item">
-                        <div class="media-left">
-                            <a class="thumbnail" href="#">
-                                <img class="media-object"
-                                    src="http://www.clantrip.com/uploadfile/2017/0414/20170414112021996.jpg"
-                                    alt="多国签证利好频出，带火春节出境游">
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <a href="#">
-                                <h4 class="media-heading">多国签证利好频出，带火春节出境游</h4>
-                            </a>
-                            <div class="dynamic-li">
-                                <span>时间：2017-04-15 </span>
-                            </div>
-                            <p>近一两个月来，澳大利亚、马来西亚、以色列、阿联酋、塞尔维亚、泰国等国纷纷对中国公民捧出签证利好，加上春节临近，大为提振了南京市民的旅游热情。记者从旅游市场上获悉，春节期间</p>
-                            <div class="dynamic-li">
-                                <a href="#">[详细]</a>
-                                <span>作者：中岚签证 <span class="hidden-xs">clantrip.com</span> </span>
+                <figure class="glly-icon ac-figure-icon"></figure>
+            </div>
+            <div class="col-sm-4 our-example-box">
+                <div class="our-example-popover">
+                    <div class="popover top">
+                        <div class="arrow"></div>
+                        <h3 class="popover-title-touxiang">
+                            <img src="http://www.clantrip.com/static/images/pingjia3.jpg">
+                        </h3>
+
+                        <div class="popover-content">
+                            <p class="popover-content-text">
+                                大学经常感到无聊，想找棋力相当的棋友交流，经过同学推荐，才发现原来身边还有这么多有共同兴趣爱好的人。
+                                让我们一起进步，一起加油！
+                            </p>
+
+                            <div class="popover-content-tag">
+                                <span class="bingzhong">运动员培训</span>
+
+                                <div class="position-address">
+                                    <figure class="position-icon"></figure>
+                                    <span>某象棋运动员</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12 our-news-more">
-                    <h2>
-                        <small><a href="#">更多资讯>>></a></small>
-                    </h2>
+                <figure class="glly-icon ac-figure-icon"></figure>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<!-- 客户的鼓励 -->
+<!-- 最新资讯 -->
+<div class="index-row our-news">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 main-title">
+                <h2 class="h1">最新资讯</h2>
+
+                <p class="line line-big"></p>
+
+                <h2>
+                    <small>带您关注最新的动态与新闻。</small>
+                </h2>
+            </div>
+            <div class="col-sm-6">
+                <div class="media our-news-item">
+                    <div class="media-left">
+                        <a class="thumbnail" href="#">
+                            <img class="media-object"
+                                src="http://www.clantrip.com/uploadfile/2017/0509/20170509103625563.jpg"
+                                alt="92名中国民工被欠薪受困塞班岛 华裔中介扣钱逃匿">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <a href="#">
+                            <h4 class="media-heading">92名中国民工被欠薪受困塞班岛 华裔中介扣钱逃匿</h4>
+                        </a>
+                        <div class="dynamic-li">
+                            <span>时间：2017-05-09 </span>
+                        </div>
+                        <p>他们大部分来自东北，在去年10月份时，其所在城市的劳务中介公司找到他们，介绍了塞班岛的工作，中介给他们开出每天工作8小时日薪300元、如果加班每小时50元的待遇。民工称他们当时也没
+                        </p>
+                        <div class="dynamic-li">
+                            <a href="#">[详细]</a>
+                            <span>作者：中岚签证 <span class="hidden-xs">clantrip.com</span> </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="media our-news-item">
+                    <div class="media-left">
+                        <a class="thumbnail" href="#">
+                            <img class="media-object"
+                                src="http://www.clantrip.com/uploadfile/2017/0508/20170508061916221.png"
+                                alt="2017年赴美签证新规定">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <a href="#">
+                            <h4 class="media-heading">2017年赴美签证新规定</h4>
+                        </a>
+                        <div class="dynamic-li">
+                            <span>时间：2017-05-08 </span>
+                        </div>
+                        <p>美国国务院领事事务局2016年10月6日公告，自2016年11月1日开始，申请美国护照或签证，要使用没有戴眼镜的照片。</p>
+                        <div class="dynamic-li">
+                            <a href="#">[详细]</a>
+                            <span>作者：中岚签证 <span class="hidden-xs">clantrip.com</span> </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="media our-news-item">
+                    <div class="media-left">
+                        <a class="thumbnail" href="#">
+                            <img class="media-object"
+                                src="http://www.clantrip.com/uploadfile/2017/0508/20170508052848613.jpg"
+                                alt="美国有多少人缴纳个人所得税及其它">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <a href="#">
+                            <h4 class="media-heading">美国有多少人缴纳个人所得税及其它</h4>
+                        </a>
+                        <div class="dynamic-li">
+                            <span>时间：2017-05-08 </span>
+                        </div>
+                        <p>前几天我们有一篇博文介绍了美国个人所得税税率，不少网友提出许多有关美国个税税收的问题，这里就集中回答。由于个税牵涉到联邦所得税以及 </p>
+                        <div class="dynamic-li">
+                            <a href="#">[详细]</a>
+                            <span>作者：中岚签证 <span class="hidden-xs">clantrip.com</span> </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="media our-news-item">
+                    <div class="media-left">
+                        <a class="thumbnail" href="#">
+                            <img class="media-object"
+                                src="http://www.clantrip.com/uploadfile/2017/0414/20170414112021996.jpg"
+                                alt="多国签证利好频出，带火春节出境游">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <a href="#">
+                            <h4 class="media-heading">多国签证利好频出，带火春节出境游</h4>
+                        </a>
+                        <div class="dynamic-li">
+                            <span>时间：2017-04-15 </span>
+                        </div>
+                        <p>近一两个月来，澳大利亚、马来西亚、以色列、阿联酋、塞尔维亚、泰国等国纷纷对中国公民捧出签证利好，加上春节临近，大为提振了南京市民的旅游热情。记者从旅游市场上获悉，春节期间</p>
+                        <div class="dynamic-li">
+                            <a href="#">[详细]</a>
+                            <span>作者：中岚签证 <span class="hidden-xs">clantrip.com</span> </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 our-news-more">
+                <h2>
+                    <small><a href="#">更多资讯>>></a></small>
+                </h2>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 最新资讯 -->
+<!-- 我们的成员 -->
+<div class="index-row our-client">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 main-title">
+                <h2 class="h1">我们的成员</h2>
+
+                <p class="line line-big"></p>
+
+                <h2>
+                    <small>他们与我们建立了合作关系</small>
+                </h2>
+            </div>
+            <div class="col-xs-4 col-sm-3 col-md-2 our-client-item">
+                <div class="our-client-logo">
+                    <img class="img-responsive center-block"
+                        src="http://www.clantrip.com/static/images/client_logo/client1.png" alt="中国重汽">
+                </div>
+            </div>
+            <div class="col-xs-4 col-sm-3 col-md-2 our-client-item">
+                <div class="our-client-logo">
+                    <img class="img-responsive center-block"
+                        src="http://www.clantrip.com/static/images/client_logo/client2.png" alt="中国中冶">
+                </div>
+            </div>
+            <div class="col-xs-4 col-sm-3 col-md-2 our-client-item">
+                <div class="our-client-logo">
+                    <img class="img-responsive center-block"
+                        src="http://www.clantrip.com/static/images/client_logo/client3.png" alt="宝钢集团">
+                </div>
+            </div>
+            <div class="col-xs-4 col-sm-3 col-md-2 our-client-item">
+                <div class="our-client-logo">
+                    <img class="img-responsive center-block"
+                        src="http://www.clantrip.com/static/images/client_logo/client4.png" alt="中国水电">
+                </div>
+            </div>
+            <div class="col-xs-4 col-sm-3 col-md-2 our-client-item">
+                <div class="our-client-logo">
+                    <img class="img-responsive center-block"
+                        src="http://www.clantrip.com/static/images/client_logo/client5.png" alt="河北建工">
+                </div>
+            </div>
+            <div class="col-xs-4 col-sm-3 col-md-2 our-client-item">
+                <div class="our-client-logo">
+                    <img class="img-responsive center-block"
+                        src="http://www.clantrip.com/static/images/client_logo/client6.png" alt="格力集团">
+                </div>
+            </div>
+            <div class="col-xs-4 col-sm-3 col-md-2 our-client-item">
+                <div class="our-client-logo">
+                    <img class="img-responsive center-block"
+                        src="http://www.clantrip.com/static/images/client_logo/client7.png" alt="山东山推">
+                </div>
+            </div>
+            <div class="col-xs-4 col-sm-3 col-md-2 our-client-item">
+                <div class="our-client-logo">
+                    <img class="img-responsive center-block"
+                        src="http://www.clantrip.com/static/images/client_logo/client8.png" alt="福田汽车">
+                </div>
+            </div>
+            <div class="col-xs-4 col-sm-3 col-md-2 our-client-item">
+                <div class="our-client-logo">
+                    <img class="img-responsive center-block"
+                        src="http://www.clantrip.com/static/images/client_logo/client9.png" alt="联想集团">
+                </div>
+            </div>
+            <div class="col-xs-4 col-sm-3 col-md-2 our-client-item">
+                <div class="our-client-logo">
+                    <img class="img-responsive center-block"
+                        src="http://www.clantrip.com/static/images/client_logo/client10.png" alt="冀中能源">
+                </div>
+            </div>
+            <div class="col-xs-4 col-sm-3 col-md-2 our-client-item">
+                <div class="our-client-logo">
+                    <img class="img-responsive center-block"
+                        src="http://www.clantrip.com/static/images/client_logo/client11.png" alt="腾讯集团">
+                </div>
+            </div>
+            <div class="col-xs-4 col-sm-3 col-md-2 our-client-item">
+                <div class="our-client-logo">
+                    <img class="img-responsive center-block"
+                        src="http://www.clantrip.com/static/images/client_logo/client12.png" alt="中国石油">
                 </div>
             </div>
         </div>
     </div>
-    <!-- 最新资讯 -->
-    <!-- 我们的成员 -->
-    <div class="index-row our-client">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 main-title">
-                    <h2 class="h1">我们的成员</h2>
-
-                    <p class="line line-big"></p>
-
-                    <h2>
-                        <small>他们与我们建立了合作关系</small>
-                    </h2>
-                </div>
-                <div class="col-xs-4 col-sm-3 col-md-2 our-client-item">
-                    <div class="our-client-logo">
-                        <img class="img-responsive center-block"
-                            src="http://www.clantrip.com/static/images/client_logo/client1.png" alt="中国重汽">
-                    </div>
-                </div>
-                <div class="col-xs-4 col-sm-3 col-md-2 our-client-item">
-                    <div class="our-client-logo">
-                        <img class="img-responsive center-block"
-                            src="http://www.clantrip.com/static/images/client_logo/client2.png" alt="中国中冶">
-                    </div>
-                </div>
-                <div class="col-xs-4 col-sm-3 col-md-2 our-client-item">
-                    <div class="our-client-logo">
-                        <img class="img-responsive center-block"
-                            src="http://www.clantrip.com/static/images/client_logo/client3.png" alt="宝钢集团">
-                    </div>
-                </div>
-                <div class="col-xs-4 col-sm-3 col-md-2 our-client-item">
-                    <div class="our-client-logo">
-                        <img class="img-responsive center-block"
-                            src="http://www.clantrip.com/static/images/client_logo/client4.png" alt="中国水电">
-                    </div>
-                </div>
-                <div class="col-xs-4 col-sm-3 col-md-2 our-client-item">
-                    <div class="our-client-logo">
-                        <img class="img-responsive center-block"
-                            src="http://www.clantrip.com/static/images/client_logo/client5.png" alt="河北建工">
-                    </div>
-                </div>
-                <div class="col-xs-4 col-sm-3 col-md-2 our-client-item">
-                    <div class="our-client-logo">
-                        <img class="img-responsive center-block"
-                            src="http://www.clantrip.com/static/images/client_logo/client6.png" alt="格力集团">
-                    </div>
-                </div>
-                <div class="col-xs-4 col-sm-3 col-md-2 our-client-item">
-                    <div class="our-client-logo">
-                        <img class="img-responsive center-block"
-                            src="http://www.clantrip.com/static/images/client_logo/client7.png" alt="山东山推">
-                    </div>
-                </div>
-                <div class="col-xs-4 col-sm-3 col-md-2 our-client-item">
-                    <div class="our-client-logo">
-                        <img class="img-responsive center-block"
-                            src="http://www.clantrip.com/static/images/client_logo/client8.png" alt="福田汽车">
-                    </div>
-                </div>
-                <div class="col-xs-4 col-sm-3 col-md-2 our-client-item">
-                    <div class="our-client-logo">
-                        <img class="img-responsive center-block"
-                            src="http://www.clantrip.com/static/images/client_logo/client9.png" alt="联想集团">
-                    </div>
-                </div>
-                <div class="col-xs-4 col-sm-3 col-md-2 our-client-item">
-                    <div class="our-client-logo">
-                        <img class="img-responsive center-block"
-                            src="http://www.clantrip.com/static/images/client_logo/client10.png" alt="冀中能源">
-                    </div>
-                </div>
-                <div class="col-xs-4 col-sm-3 col-md-2 our-client-item">
-                    <div class="our-client-logo">
-                        <img class="img-responsive center-block"
-                            src="http://www.clantrip.com/static/images/client_logo/client11.png" alt="腾讯集团">
-                    </div>
-                </div>
-                <div class="col-xs-4 col-sm-3 col-md-2 our-client-item">
-                    <div class="our-client-logo">
-                        <img class="img-responsive center-block"
-                            src="http://www.clantrip.com/static/images/client_logo/client12.png" alt="中国石油">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- 我们的客户 -->
-
-
-
-    <!-- 返回顶部滑块 -->
-    <div id="clan-slider">
-        <ul>
-            <li class="hidden-xs">
-                <a id="slider-chat" class="web-chat" href="javascript:;"></a>
-                <div class="clan-slider-tips">
-                    在线咨询
-                </div>
-            </li>
-            <li class="hidden-xs">
-                <a target="_blank" href="#" id="slider-qq"></a>
-                <div class="clan-slider-tips">
-                    QQ咨询
-                </div>
-            </li>
-            <li class="hidden-xs">
-                <a id="slider-phone" href="javascript:void(0);"></a>
-                <div class="clan-slider-tips">
-                    188********
-                </div>
-            </li>
-            <li class="hidden-xs">
-                <a id="slider-wechat" href="javascript:void(0);"></a>
-                <div class="clan-slider-tips-wechat">
-                    <img src="http://www.clantrip.com/static/images/wechat.png">
-                </div>
-            </li>
-            <li><a id="slider-goTop" href="javascript:void(0);"></a></li>
-        </ul>
-    </div>
-    <!-- 返回顶部滑块 -->
-    <!-- 整站通用的尾部 -->
-    <div id="sidebar-bg" style="display: none;"></div>
-    <!-- 立即咨询 -->
-    <div class="contact-banner">
-        <canvas id="waves" class="waves"></canvas>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 contact-banner-box">
-                    <h2 class="h1">更多疑问 全面解答</h2>
-                    <h4>专业赛事承办组织在线为您解答所有疑惑</h4>
-                    <a href="javascript:;" class="btn btn-outline-inverse btn-lg web-chat">免费咨询</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- 立即咨询 -->
-    <!-- 通用页脚 -->
-    <div id="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-6 col-sm-2 footer-item">
-                    <div class="footer-list">
-                        <h4>常用工具</h4>
-                        <ul>
-                            <li><a href="/code" target="_blank">电码查询</a></li>
-                            <li><a href="/index.php?m=content&c=index&a=show&catid=12&id=36#track">护照追踪</a></li>
-                            <li><a href="http://www.clantrip.com/index.php?m=content&c=index&a=lists&catid=14">资料下载</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-2 footer-item">
-                    <div class="footer-list">
-                        <h4>快捷裢接</h4>
-                        <ul>
-                            <li><a href="http://www.clantrip.com/index.php?m=content&c=index&a=lists&catid=10">签证资讯</a>
-                            </li>
-                            <li><a href="/index.php?m=content&c=index&a=show&catid=7&id=1">签证指南</a></li>
-                            <li><a href="/index.php?m=content&c=index&a=show&catid=8&id=37">常见问题</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-2 footer-item">
-                    <div class="footer-list">
-                        <h4>关于我们</h4>
-                        <ul>
-                            <li><a href="/index.php?m=content&c=index&a=show&catid=11&id=17">关于中岚</a></li>
-                            <li><a href="/index.php?m=content&c=index&a=show&catid=11&id=19">服务协议</a></li>
-                            <li><a href="javascript:AddFavorite('美国签证-中岚','http://www.clantrip.com/');">收藏本站</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-2 footer-item">
-                    <div class="footer-wechat">
-                        <img class="img-responsive" src="http://www.clantrip.com/static/images/wechat.png">
-                        <p>微信：********</p>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-4 footer-item footer-item-last">
-                    <div class="footer-contact">
-                        <h2><img src="http://www.clantrip.com/static/images/icons/pc-footer-phone.png">188********</h2>
-                        <h2><img src="http://www.clantrip.com/static/images/icons/pc-footer-qq.png">********</h2>
-                        <h2><img src="http://www.clantrip.com/static/images/icons/pc-footer-mob.png">188********</h2>
-                    </div>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div>
-    <div id="copyright">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <p>Copyright @ 2013~{:date('Y',time())} 版权所有 <a href="https://beian.miit.gov.cn"
-                            target="_blank">{$site.beian|htmlentities}</a></p>
-                    <div style="width:300px;margin:0 auto; padding:20px 0; text-align: center;">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- 通用页脚 -->
-    <!-- 手机端底部 -->
-    <div id="mob-bottom" class="visible-xs-block">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-3 mob-bottom-item">
-                    <a href="tel:18810888729">
-                        <img class="img-responsive center-block"
-                            src="http://www.clantrip.com/static/images/icons/mob-footer-phone.png">
-                        <span>电话咨询</span>
-                    </a>
-                </div>
-                <div class="col-xs-3 mob-bottom-item">
-                    <a href="tel:18810888729">
-                        <img class="img-responsive center-block"
-                            src="http://www.clantrip.com/static/images/icons/mob-footer-mob.png">
-                        <span>紧急电话</span>
-                    </a>
-                </div>
-                <div class="col-xs-3 mob-bottom-item">
-                    <a href="#">
-                        <img class="img-responsive center-block web-chat"
-                            src="http://www.clantrip.com/static/images/icons/mob-footer-chat.png">
-                        <span>在线咨询</span>
-                    </a>
-                </div>
-                <div class="col-xs-3 mob-bottom-item">
-                    <a href="sms:18810888729">
-                        <img class="img-responsive center-block"
-                            src="http://www.clantrip.com/static/images/icons/mob-footer-msm.png">
-                        <span>短信咨询</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- 手机端底部 -->
-    <!-- 整站通用的尾部 -->
-</body>
-
-</html>
+</div>
+<!-- 我们的客户 -->

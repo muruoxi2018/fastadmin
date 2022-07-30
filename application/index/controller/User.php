@@ -8,6 +8,7 @@ use app\common\library\Ems;
 use app\common\library\Sms;
 use app\common\model\Attachment;
 use app\common\model\UserGrading;
+use app\common\model\User as U;
 use think\Config;
 use think\Cookie;
 use think\Hook;
@@ -57,6 +58,10 @@ class User extends Frontend
     public function index()
     {
         $this->view->assign('title', __('User center'));
+        $u = new U();
+        $group = is_null($u->getGroupAttr(null,$this->auth->getUser()))?"超级管理员":$u->getGroupAttr(null,$this->auth->getUser());
+        $this->view->assign('group', $group);
+        // $this->error("","","",1000);
         return $this->view->fetch();
     }
 

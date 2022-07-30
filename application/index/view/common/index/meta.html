@@ -1,0 +1,29 @@
+<meta charset="utf-8">
+<title>{$title|default=''|htmlentities} – {$site.name|htmlentities}</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<meta name="renderer" content="webkit">
+<link rel="shortcut icon" href="__CDN__/assets/img/favicon.ico" />
+<title>{$site.name|htmlentities}</title>
+{if isset($keywords)}
+<meta name="keywords" content="{$site.keywords|htmlentities}">
+{/if}
+{if isset($description)}
+<meta name="description" content="{$site.description|htmlentities}">
+{/if}
+<link rel="shortcut icon" href="__CDN__/assets/img/favicon.ico" />
+<!-- Bootstrap Core CSS -->
+<link href="__CDN__/assets/libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="__CDN__/assets/css/index.css" rel="stylesheet">
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="__CDN__/assets/libs/jquery/dist/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="__CDN__/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+            <script src="https://cdn.staticfile.org/html5shiv/3.7.3/html5shiv.min.js"></script>
+            <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->

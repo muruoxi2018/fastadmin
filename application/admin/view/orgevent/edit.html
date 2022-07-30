@@ -1,0 +1,142 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-name" class="form-control" name="row[name]" type="text" value="{$row.name|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            
+            <div class="radio">
+            {foreach name="statusList" item="vo"}
+            <label for="row[status]-{$key}"><input id="row[status]-{$key}" name="row[status]" type="radio" value="{$key}" {in name="key" value="$row.status"}checked{/in} /> {$vo}</label> 
+            {/foreach}
+            </div>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Daterange')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-daterange" class="form-control datetimerange" data-locale='{"format":"YYYY-MM-DD HH:mm:ss"}' name="row[daterange]" type="text" value="{$row.daterange|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Address')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-address" class="form-control" name="row[address]" type="text" value="{$row.address|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Linkman')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-linkman" class="form-control" name="row[linkman]" type="text" value="{$row.linkman|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Contact')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-contact" class="form-control" name="row[contact]" type="text" value="{$row.contact|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Zhidao')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-zhidao" class="form-control " rows="5" name="row[zhidao]" cols="50">{$row.zhidao|htmlentities}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Zhuban')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-zhuban" class="form-control " rows="5" name="row[zhuban]" cols="50">{$row.zhuban|htmlentities}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Chengban')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-chengban" class="form-control " rows="5" name="row[chengban]" cols="50">{$row.chengban|htmlentities}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Xieban')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-xieban" class="form-control " rows="5" name="row[xieban]" cols="50">{$row.xieban|htmlentities}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Zanzhu')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-zanzhu" class="form-control " rows="5" name="row[zanzhu]" cols="50">{$row.zanzhu|htmlentities}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Timeandaddress')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-timeandaddress" class="form-control " rows="5" name="row[timeandaddress]" cols="50">{$row.timeandaddress|htmlentities}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Xiangmu')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-xiangmu" class="form-control " rows="5" name="row[xiangmu]" cols="50">{$row.xiangmu|htmlentities}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Zige')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-zige" class="form-control " rows="5" name="row[zige]" cols="50">{$row.zige|htmlentities}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Cansaibanfa')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-cansaibanfa" class="form-control " rows="5" name="row[cansaibanfa]" cols="50">{$row.cansaibanfa|htmlentities}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Jingsaibanfa')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-jingsaibanfa" class="form-control " rows="5" name="row[jingsaibanfa]" cols="50">{$row.jingsaibanfa|htmlentities}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Jilv')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-jilv" class="form-control " rows="5" name="row[jilv]" cols="50">{$row.jilv|htmlentities}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Zuweihui')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-zuweihui" class="form-control " rows="5" name="row[zuweihui]" cols="50">{$row.zuweihui|htmlentities}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Luquandjiangli')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-luquandjiangli" class="form-control " rows="5" name="row[luquandjiangli]" cols="50">{$row.luquandjiangli|htmlentities}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Baomingandbaodao')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-baomingandbaodao" class="form-control " rows="5" name="row[baomingandbaodao]" cols="50">{$row.baomingandbaodao|htmlentities}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Jingfei')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-jingfei" class="form-control " rows="5" name="row[jingfei]" cols="50">{$row.jingfei|htmlentities}</textarea>
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-primary btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

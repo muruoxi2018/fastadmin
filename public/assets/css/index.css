@@ -968,22 +968,63 @@ blockquote .quote-content {
 }
 
 #sidebar-content {
-    width: 115%;
+    /* width: 115%; */
     height: 100% !important;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 }
 
 #sidebar-content ul {
-    margin: 0;
-    padding: 0;
+    background-color: #fff;
+    box-shadow:1px 1px 2px #c6c6c6;
+    padding-top:20px;
+    padding-bottom:20px;
+    margin-bottom: 20px;
     list-style: none;
 }
 
 #sidebar-content ul li {
-    padding-left: 1em;
+    height:inherit;
+    padding-right: 60px;
+    line-height: 46px;
+    margin-right: -36px;
 }
 
-#sidebar-content ul li a {
+#sidebar-content ul li:first-child{
+    margin-bottom: 16px;
+}
+
+#sidebar-content ul li span{
+    font-size:18px;
+    color: #0ba1e4;
+    font-weight: bold;
+}
+
+#sidebar-content ul li h5{
+    display: inline-block;
+    margin-bottom:0px;
+    color: #333;
+    font-size:18px;
+    font-weight:bold;
+}
+
+#sidebar-content ul li.active{
+    background:url(../img/tag-lg.png) no-repeat 150% 50%;
+}
+
+#sidebar-content ul li.active a{
+    color: #fff;
+    }
+
+#sidebar-content ul li a{
+    color:#96a0b0;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing:10px;
+    margin-left: 30px
+}
+
+/* #sidebar-content ul li a {
     display: block;
     width: 100%;
     padding-left: 1em;
@@ -1019,7 +1060,7 @@ blockquote .quote-content {
 
 #sidebar-content>ul>li>a:hover {
     background-color: rgba(194,214,229,.6);
-}
+} */
 
 
 @media (max-width: 767px) {
