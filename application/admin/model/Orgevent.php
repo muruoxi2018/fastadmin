@@ -50,4 +50,5 @@ class Orgevent extends Model
     {
         return $this->belongsTo('Admin', 'admin_id', 'id', [], 'LEFT')->setEagerlyType(0);
     }
+
 }

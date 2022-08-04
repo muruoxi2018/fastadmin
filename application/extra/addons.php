@@ -2,7 +2,11 @@
 
 return [
     'autoload' => false,
-    'hooks' => [],
+    'hooks' => [
+        'config_init' => [
+            'summernote',
+        ],
+    ],
     'route' => [
         '/example$' => 'example/index/index',
         '/example/d/[:name]' => 'example/demo/index',

@@ -38,13 +38,51 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'createtime', title: __('Createtime'), operate:'RANGE', addclass:'datetimerange', autocomplete:false, formatter: Table.api.formatter.datetime,datetimeFormat:'YYYY-MM-DD'},
                         {field: 'updatetime', title: __('Updatetime'), operate:'RANGE', addclass:'datetimerange', autocomplete:false, formatter: Table.api.formatter.datetime,datetimeFormat:'YYYY-MM-DD'},
                         //{field: 'admin.username', title: __('Admin.username'), operate: 'LIKE'},
-                        {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate,formatter: Table.api.formatter.operate}
+                        //{field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate,formatter: Table.api.formatter.operate}
+                        {
+                            field: 'operate',
+                            width: "150px",
+                            title: __('Operate'),
+                            table: table,
+                            events: Table.api.events.operate,
+                            buttons: [
+                                {
+                                    name: 'export',
+                                    title: __('Export order book'),
+                                    classname: 'btn btn-xs btn-info btn-click btn-ajax',
+                                    icon: 'fa fa-leaf',
+                                    url:'orgevent/export',
+                                    // dropdown: '更多',//如果包含dropdown，将会以下拉列表的形式展示
+                                    success: function (data, ret) {
+                                        //Layer.alert(ret.msg);
+                                        let link = document.createElement("a");
+                                        link.href = window.URL.createObjectURL(new Blob([data]));
+                                        link.target = "_blank";
+                                        link.download = "秩序册.doc";
+                                        document.body.appendChild(link); 
+                                        link.click();
+                                        document.body.removeChild(link);
+                                        
+                                        //如果需要阻止成功提示，则必须使用return false;
+                                        return false;
+                                    },
+                                    error: function (data, ret) {
+                                        console.log(data, ret);
+                                        Layer.alert(ret.msg);
+                                        return false;
+                                    }
+                                }
+                            ],
+                            formatter: Table.api.formatter.operate
+                        }
                     ]
                 ]
             });
 
             // 为表格绑定事件
             Table.api.bindevent(table);
+            
+            
         },
         recyclebin: function () {
             // 初始化表格参数配置
