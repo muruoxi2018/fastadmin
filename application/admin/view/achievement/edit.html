@@ -1,0 +1,164 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Orgevent_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-orgevent_id" min="0" data-rule="required" data-source="orgevent/index" class="form-control selectpage" name="row[orgevent_id]" type="text" value="{$row.orgevent_id|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Number')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-number" class="form-control" name="row[number]" type="number" value="{$row.number|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-name" class="form-control" name="row[name]" type="text" value="{$row.name|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Troop')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-troop" class="form-control" name="row[troop]" type="text" value="{$row.troop|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Sex')}:</label>
+        <div class="col-xs-12 col-sm-8">
+                        
+            <select  id="c-sex" class="form-control selectpicker" name="row[sex]">
+                {foreach name="sexList" item="vo"}
+                    <option value="{$key}" {in name="key" value="$row.sex"}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Bseedsswitch')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            
+            <input  id="c-bseedsswitch" name="row[bseedsswitch]" type="hidden" value="{$row.bseedsswitch}">
+            <a href="javascript:;" data-toggle="switcher" class="btn-switcher" data-input-id="c-bseedsswitch" data-yes="1" data-no="0" >
+                <i class="fa fa-toggle-on text-success {eq name="$row.bseedsswitch" value="0"}fa-flip-horizontal text-gray{/eq} fa-2x"></i>
+            </a>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Bcomposswitch')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-bcomposswitch" class="form-control" name="row[bcomposswitch]" type="number" value="{$row.bcomposswitch|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Tel')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-tel" min="0" class="form-control" name="row[tel]" type="number" value="{$row.tel|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Idnumber')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-idnumber" min="0" class="form-control" name="row[idnumber]" type="number" value="{$row.idnumber|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Native')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-native" class="form-control" name="row[native]" type="text" value="{$row.native|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Zjf')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-zjf" min="0" class="form-control" name="row[zjf]" type="number" value="{$row.zjf|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Cumulative')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-cumulative" min="0" class="form-control" name="row[cumulative]" type="number" value="{$row.cumulative|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Dszjf')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-dszjf" min="0" class="form-control" name="row[dszjf]" type="number" value="{$row.dszjf|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Cyclesum')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-cyclesum" min="0" class="form-control" name="row[cyclesum]" type="number" value="{$row.cyclesum|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Victorysum')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-victorysum" min="0" class="form-control" name="row[victorysum]" type="number" value="{$row.victorysum|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Deucesum')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-deucesum" min="0" class="form-control" name="row[deucesum]" type="number" value="{$row.deucesum|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Group')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-group" class="form-control" name="row[group]" type="number" value="{$row.group|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Sumwarning')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-sumwarning" min="0" class="form-control" name="row[sumwarning]" type="number" value="{$row.sumwarning|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Failsum')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-failsum" min="0" class="form-control" name="row[failsum]" type="number" value="{$row.failsum|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Summation')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-summation" min="0" class="form-control" name="row[summation]" type="number" value="{$row.summation|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Conpositor')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-conpositor" min="0" class="form-control" name="row[conpositor]" type="number" value="{$row.conpositor|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Vicsum')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-vicsum" min="0" class="form-control" name="row[vicsum]" type="number" value="{$row.vicsum|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Backbou')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-backbou" min="0" class="form-control" name="row[backbou]" type="number" value="{$row.backbou|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Victory')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-victory" min="0" class="form-control" name="row[victory]" type="number" value="{$row.victory|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-primary btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>
