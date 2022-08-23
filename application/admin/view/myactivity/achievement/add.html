@@ -1,0 +1,78 @@
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-name" class="form-control" name="row[name]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Troop')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-troop" class="form-control" name="row[troop]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Sex')}:</label>
+        <div class="col-xs-12 col-sm-8">
+                        
+            <select  id="c-sex" class="form-control selectpicker" name="row[sex]">
+                {foreach name="sexList" item="vo"}
+                    <option value="{$key}" {in name="key" value="男"}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Group')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-group" name="row[group]" type="text" class="form-control" data-role='tagsinput' value="默认分组" data-tagsinput-options='{"trimValue":true,"autocomplete":{"url":"myactivity/achievement/getgroup"}}' />
+            <!-- <input id="c-group" class="form-control selectpage" data-source="myactivity/achievement/getgroup" name="row[group]" type="text" value=""> -->
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Tel')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-tel" min="0" class="form-control" name="row[tel]" type="number">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Idnumber')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-idnumber" min="0" class="form-control" name="row[idnumber]" type="number">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Bseedsswitch')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            
+            <input  id="c-bseedsswitch" name="row[bseedsswitch]" type="hidden" value="0">
+            <a href="javascript:;" data-toggle="switcher" class="btn-switcher" data-input-id="c-bseedsswitch" data-yes="1" data-no="0" >
+                <i class="fa fa-toggle-on text-success fa-flip-horizontal text-gray fa-2x"></i>
+            </a>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Bcomposswitch')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input  id="c-bcomposswitch" name="row[bcomposswitch]" type="hidden" value="0">
+            <a href="javascript:;" data-toggle="switcher" class="btn-switcher" data-input-id="c-bcomposswitch" data-yes="1" data-no="0" >
+                <i class="fa fa-toggle-on text-success fa-flip-horizontal text-gray fa-2x"></i>
+            </a>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Native')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-native" class="form-control" name="row[native]" type="text">
+        </div>
+     </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-primary btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

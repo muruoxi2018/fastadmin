@@ -138,7 +138,7 @@ class Command extends Backend
             'crud' => 'table,controller,model,fields,force,local,delete,menu',
             'menu' => 'controller,delete',
             'min'  => 'module,resource,optimize',
-            'api'  => 'url,module,output,template,force,title,author,class,language',
+            'api'  => 'url,module,output,template,force,title,author,class,language,addon',
         ];
         $argv = [];
         $allowfields = isset($allowfields[$commandtype]) ? explode(',', $allowfields[$commandtype]) : [];
@@ -152,7 +152,7 @@ class Command extends Backend
             $argv[] = "--{$key}=" . (is_array($param) ? implode(',', $param) : $param);
         }
         if ($commandtype == 'crud') {
-            $extend = 'setcheckboxsuffix,enumradiosuffix,imagefield,filefield,intdatesuffix,switchsuffix,citysuffix,selectpagesuffix,selectpagessuffix,ignorefields,sortfield,editorsuffix,headingfilterfield';
+            $extend = 'setcheckboxsuffix,enumradiosuffix,imagefield,filefield,intdatesuffix,switchsuffix,citysuffix,selectpagesuffix,selectpagessuffix,ignorefields,sortfield,editorsuffix,headingfilterfield,tagsuffix,jsonsuffix,fixedcolumns';
             $extendArr = explode(',', $extend);
             foreach ($params as $index => $item) {
                 if (in_array($index, $extendArr)) {
@@ -195,8 +195,15 @@ class Command extends Backend
             }
         }
         if ($action == 'execute') {
-            $result = $this->doexecute($commandtype, $argv);
-            $this->success("", null, ['result' => $result]);
+            if (stripos(implode(' ', $argv), '--controller=all-controller') !== false) {
+                $this->error("只允许在命令行执行该命令，执行前请做好菜单规则备份！！！");
+            }
+            if (config('app_debug')) {
+                $result = $this->doexecute($commandtype, $argv);
+                $this->success("", null, ['result' => $result]);
+            } else {
+                $this->error("只允许在开发环境下执行命令");
+            }
         } else {
             $this->success("", null, ['command' => "php think {$commandtype} " . implode(' ', $argv)]);
         }

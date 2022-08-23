@@ -1,0 +1,30 @@
+<?php
+
+return [
+    'Id'            => 'ID',
+    'Orgevent_id'   => '比赛名称',
+    'Number'        => '选手编号',
+    'Name'          => '姓名',
+    'Troop'         => '团队（单位）',
+    'Sex'           => '性别',
+    'Bseedsswitch'  => '种子',
+    'Bcomposswitch' => '团体',
+    'Tel'           => '电话',
+    'Idnumber'      => '证件号码',
+    'Native'        => '备注',
+    'Zjf'           => '积分',
+    'Cumulative'    => '累进分',
+    'Dszjf'         => '对手分',
+    'Cyclesum'      => '小分',
+    'Victorysum'    => '胜对手分',
+    'Deucesum'      => '和对手分',
+    'Group'         => '组别',
+    'Sumwarning'    => '犯规',
+    'Failsum'       => '负对手分',
+    'Summation'     => '总得分',
+    'Conpositor'    => '名次',
+    'Vicsum'        => '胜局',
+    'Backbou'       => '后手局',
+    'Victory'       => '后手胜局',
+    'Orgevent.name' => '赛事名称'
+];

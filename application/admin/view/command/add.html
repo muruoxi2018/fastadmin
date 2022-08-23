@@ -77,7 +77,7 @@
                                         <input type="text" class="form-control" name="model" data-toggle="tooltip" title="默认根据表名自动生成" placeholder="不支持目录层级">
                                     </div>
                                     <div class="col-xs-3">
-                                        <label>请选择显示字段(默认全部)</label>
+                                        <label>显示字段(默认全部)</label>
                                         <select name="fields[]" id="fields" multiple style="height:30px;" class="form-control selectpicker"></select>
                                     </div>
 
@@ -151,6 +151,18 @@
                                         <label>选项卡过滤字段</label>
                                         <input type="text" class="form-control" name="headingfilterfield" placeholder="默认为status" />
                                     </div>
+                                    <div class="col-xs-2">
+                                        <label>标签后缀 <i class="fa fa-info-circle" data-toggle="tooltip" data-title="只支持1.3.0+版本"></i></label>
+                                        <input type="text" class="form-control" name="tagsuffix" placeholder="默认为tag,tags" />
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <label>JSON后缀 <i class="fa fa-info-circle" data-toggle="tooltip" data-title="只支持1.3.0+版本"></i></label>
+                                        <input type="text" class="form-control" name="jsonsuffix" placeholder="默认为json" />
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <label>固定列数量 <i class="fa fa-info-circle" data-toggle="tooltip" data-title="只支持1.3.0+版本，大于0时为右侧固定列数量，小于0时为左侧固定列数量"></i></label>
+                                        <input type="text" class="form-control" name="fixedcolumns" placeholder="默认不启用" />
+                                    </div>
 
                                 </div>
 
@@ -184,19 +196,19 @@
                                 <div class="row">
                                     <div class="col-xs-3">
                                         <input checked="" name="allcontroller" type="hidden" value="0">
-                                        <label class="control-label">
+                                        <label class="control-label" data-toggle="tooltip" title="将删除全部的菜单规则，重新按控制器进行生成，请做好备份，谨慎选择">
                                             <input name="allcontroller" data-toggle="collapse" data-target="#controller" type="checkbox" value="1"> 一键生成全部控制器
                                         </label>
                                     </div>
                                     <div class="col-xs-3">
                                         <input checked="" name="delete" type="hidden" value="0">
-                                        <label class="control-label">
+                                        <label class="control-label" data-toggle="tooltip" title="删除控制器菜单规则">
                                             <input name="delete" type="checkbox" value="1"> 删除模式
                                         </label>
                                     </div>
                                     <div class="col-xs-3">
                                         <input checked="" name="force" type="hidden" value="0">
-                                        <label class="control-label">
+                                        <label class="control-label" data-toggle="tooltip" title="如果菜单规则已经存在则覆盖">
                                             <input name="force" type="checkbox" value="1"> 强制覆盖模式
                                         </label>
                                     </div>
@@ -305,7 +317,7 @@
                                 <div class="row">
                                     <div class="col-xs-3">
                                         <input checked="" name="force" type="hidden" value="0">
-                                        <label class="control-label">
+                                        <label class="control-label" data-toggle="tooltip" title="如果已经存在则覆盖">
                                             <input name="force" type="checkbox" value="1">
                                             覆盖模式
                                         </label>
@@ -327,22 +339,40 @@
                                         <label>模板文件</label>
                                         <input type="text" name="template" class="form-control" placeholder="如果不清楚请留空" />
                                     </div>
-                                </div>
-                                <div class="row" style="margin-top:10px;">
-                                    <div class="col-xs-3">
-                                        <label>文档标题</label>
-                                        <input type="text" name="title" class="form-control" placeholder="默认为FastAdmin" />
-                                    </div>
-                                    <div class="col-xs-3">
-                                        <label>文档作者</label>
-                                        <input type="text" name="author" class="form-control" placeholder="默认为FastAdmin" />
-                                    </div>
                                     <div class="col-xs-3">
                                         <label>文档语言</label>
                                         <select name="language" class="form-control">
                                             <option value="" selected>请选择语言</option>
                                             <option value="zh-cn">中文</option>
                                             <option value="en">英文</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top:10px;">
+                                    <div class="col-xs-3">
+                                        <label>文档标题</label>
+                                        <input type="text" name="title" class="form-control" placeholder="默认为{$site.name}" />
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label>文档作者</label>
+                                        <input type="text" name="author" class="form-control" placeholder="默认为{$site.name}" />
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label>生成模块</label>
+                                        <select name="module" class="form-control selectpicker">
+                                            <option value="" selected>请选择模块</option>
+                                            <option value="api">API</option>
+                                            <option value="backend">后台</option>
+                                            <option value="frontend">前台</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label>生成插件文档</label>
+                                        <select name="addon" class="form-control selectpicker" data-live-search="true">
+                                            <option value="" selected>请选择插件</option>
+                                            {foreach name=":get_addon_list()" id="item"}
+                                            <option value="{$item.name}">{$item.title}</option>
+                                            {/foreach}
                                         </select>
                                     </div>
                                 </div>
