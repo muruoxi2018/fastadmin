@@ -1,0 +1,13 @@
+<div class="row">
+
+    <label>签到网址为：</label>
+    <b>{$url|htmlentities}</b>
+</div>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2 col-xs-12">
+        
+        <div class="">签到二维码</div>
+        <input type="hidden" id="qrcode_src" value="{$url|htmlentities}">
+        <div id="qrcode"></div>
+    </div>
+</div>

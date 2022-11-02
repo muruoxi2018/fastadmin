@@ -1,0 +1,27 @@
+<div class="panel panel-default panel-intro">
+    {:build_heading()}
+
+    <div class="panel-body">
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade active in" id="one">
+                <div class="widget-body no-padding">
+                    <div id="toolbar" class="toolbar">
+                        <a href="javascript:;" class="btn btn-primary btn-refresh" title="{:__('Refresh')}" ><i class="fa fa-refresh"></i> </a>
+                        <a href="javascript:;" class="btn btn-success btn-add {:$auth->check('ygame/result/add')?'':'hide'}" title="{:__('Add')}" ><i class="fa fa-plus"></i> {:__('Add')}</a>
+                        <a href="javascript:;" class="btn btn-success btn-edit btn-disabled disabled {:$auth->check('ygame/result/edit')?'':'hide'}" title="{:__('Edit')}" ><i class="fa fa-pencil"></i> {:__('Edit')}</a>
+                        <a href="javascript:;" class="btn btn-danger btn-del btn-disabled disabled {:$auth->check('ygame/result/del')?'':'hide'}" title="{:__('Delete')}" ><i class="fa fa-trash"></i> {:__('Delete')}</a>
+                        <a href="javascript:;"  data-project_id="{$project_id}" class="btn btn-danger btn-import_excel {:$auth->check('ygame/result/import')?'':'hide'}"   title="{:__('导入成绩')}" id="btn-import-file" data-mimetype="xlsx" data-multiple="false"><i class="fa fa-upload"></i> {:__('导入成绩')}</a>
+                        <a href="/assets/addons/ygame/file/template.xlsx" class="btn {:$auth->check('ygame/result/import')?'':'hide'}" title="{:__('成绩模板下载')}"><i class="fa fa-download"></i> {:__('成绩模板下载')}</a>
+                        
+                    </div>
+                    <table id="table" data-project_id="{$project_id}" class="table table-striped table-bordered table-hover table-nowrap"
+                           data-operate-edit="{:$auth->check('ygame/result/edit')}" 
+                           data-operate-del="{:$auth->check('ygame/result/del')}" 
+                           width="100%">
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

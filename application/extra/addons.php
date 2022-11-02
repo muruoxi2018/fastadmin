@@ -5,12 +5,14 @@ return [
     'hooks' => [
         'upgrade' => [
             'cms',
+            'league',
             'myactivity',
         ],
         'app_init' => [
             'cms',
             'epay',
             'xunsearch',
+            'ygame',
         ],
         'view_filter' => [
             'cms',
@@ -26,6 +28,9 @@ return [
         ],
         'xunsearch_index_reset' => [
             'cms',
+        ],
+        'app_begin' => [
+            'league',
         ],
         'config_init' => [
             'summernote',
@@ -45,7 +50,7 @@ return [
         ],
     ],
     'route' => [
-        '/cms/$' => 'cms/index/index',
+        '/$' => 'cms/index/index',
         '/cms/t/[:diyname]$' => 'cms/tag/index',
         '/cms/p/[:diyname]$' => 'cms/page/index',
         '/cms/s$' => 'cms/search/index',

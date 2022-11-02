@@ -1,0 +1,109 @@
+<style>
+    .basicinfo {
+        margin: 15px 0;
+    }
+
+    .basicinfo .row>.col-xs-4 {
+        padding-right: 0;
+    }
+
+    .basicinfo .row>div {
+        margin: 5px 0;
+    }
+</style>
+<div id="content-container" class="container">
+    <div class="row">
+        <div class="col-md-3">
+            {include file="common/sidenav" /}
+        </div>
+        <div class="col-md-9">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h2 class="page-header">
+                        {:__('Member center')}
+                        <a href="{:url('user/profile')}" class="btn btn-primary pull-right"><i class="fa fa-pencil"></i>
+                            {:__('Profile')}</a>
+                    </h2>
+                    <div class="row user-baseinfo">
+                        <div class="col-md-3 col-sm-3 col-xs-2 text-center user-center">
+                            <a href="{:url('user/profile')}" title="{:__('Click to edit')}">
+                                <span class="avatar-img"><img src="{$user.avatar|htmlentities|cdnurl}" alt=""></span>
+                            </a>
+                        </div>
+                        <div class="col-md-9 col-sm-9 col-xs-10">
+                            <!-- Content -->
+                            <div class="ui-content">
+                                <!-- Heading -->
+                                <h4><a href="{:url('user/profile')}">{$user.nickname|htmlentities}</a></h4>
+                                <!-- Paragraph -->
+                                <p class="text-muted">
+                                    {$user.bio|default=__("This guy hasn't written anything yet")|htmlentities}
+                                </p>
+                                <!-- Success -->
+                            </div>
+                        </div>
+
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <!-- Content -->
+                            <div class="ui-content">
+                                <div class="basicinfo">
+                                    <div class="row">
+                                        <div class="col-xs-4 col-md-2">{:__('Group')}</div>
+                                        <div class="col-xs-8 col-md-4">{$group}</div>
+                                        <div class="col-xs-4 col-md-2">{:__('Level')}</div>
+                                        <div class="col-xs-8 col-md-4">{$user.level}</div>
+                                        <!-- <div class="col-xs-4 col-md-2">{:__('Money')}</div>
+                                        <div class="col-xs-8 col-md-4">
+                                            <a href="javascript:;" class="viewmoney">{$user.money}</a>
+                                        </div>
+                                        <div class="col-xs-4 col-md-2">{:__('Score')}</div>
+                                        <div class="col-xs-8 col-md-4">
+                                            <a href="javascript:;" class="viewscore">{$user.score}</a>
+                                        </div> -->
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-4 col-md-2">{:__('Successions')}</div>
+                                        <div class="col-xs-8 col-md-4">{$user.successions} {:__('Day')}</div>
+                                        <div class="col-xs-4 col-md-2">{:__('Maxsuccessions')}</div>
+                                        <div class="col-xs-8 col-md-4">{$user.maxsuccessions} {:__('Day')}</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-4 col-md-2">{:__('Logintime')}</div>
+                                        <div class="col-xs-8 col-md-4">{$user.logintime|date="Y-m-d H:i:s",###}</div>
+                                        <div class="col-xs-4 col-md-2">{:__('Prevtime')}</div>
+                                        <div class="col-xs-8 col-md-4">{$user.prevtime|date="Y-m-d H:i:s",###}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row user-checking">
+                        <blockquote>
+                            <p>亲爱的用户 </p>
+                            <p>您还不是甘大棋联的会员，</p>
+                            <p>申请加入会员您将享受会员权益，并可以获得协会最新资讯以及更多比赛活动机会。</p>
+                            <a href="#" class="btn-lg btn_blue ">立即申请成为会员</a>
+                        </blockquote>
+                        <div class="user-memberEquity">
+                            <h3>会员权益</h3>
+                            <p class="title">个人会员享受以下服务和优惠政策</p>
+                            <ol>
+                                <li>通过会员渠道免费参加协会举办的各级棋类赛事；</li>
+                                <li>优先优惠参加协会组织的培训及交流活动；</li>
+                                <li>其他会员专享活动。</li>
+                            </ol>
+                            <p class="title">单位会员享受以下服务和优惠政策</p>
+                            <ol>
+                                <li>可申报三名个人会员并免个人会费；</li>
+                                <li>优先优惠派员参加协会组织的培训及活动；</li>
+                                <li>共享协会资源；</li>
+                                <li>其他会员专享活动。</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

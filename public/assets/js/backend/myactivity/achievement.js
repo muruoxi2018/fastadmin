@@ -69,7 +69,17 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                     return params;
                 }
             });
-
+            $('.create').click(function(){
+                Layer.confirm(__('是否创建比赛？如果已经存在比赛，此操作会造成数据覆盖。'), function () {
+                    Fast.api.ajax({
+                        url: 'myactivity/achievement/create',
+                        data: {orgevent_id: Fast.api.query('ids')}
+                    }, function () {
+                        // table.trigger("uncheckbox");
+                        // table.bootstrapTable('refresh');
+                    });
+                });
+            });
             // 为表格绑定事件
             Table.api.bindevent(table);
         },

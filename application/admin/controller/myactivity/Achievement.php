@@ -146,4 +146,15 @@ class Achievement extends Backend
         $this->success();
     }
     
+    /**创建比赛 */
+    public function create(){
+        if (false === $this->request->isAjax()) {
+            $this->error();
+        }
+        $orgevent_id = $this->request->post('orgevent_id');
+        if (empty($orgevent_id)) {
+            $this->error(__('Parameter %s can not be empty', ''));
+        }
+        
+    }
 }
