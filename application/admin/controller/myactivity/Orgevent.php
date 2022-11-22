@@ -39,17 +39,17 @@ class Orgevent extends Backend
     /**
      * 导出秩序册
      *
-     * @param $ids
+     * @param $project_id
      * @return void
      */
-    public function export($ids = null)
+    public function export($project_id = null)
     {
         if (false === $this->request->isAjax()) {
             $this->error(__('Invalid parameters'));
         }
-        $ids = $ids ?: $this->request->post('ids');
-        if (empty($ids)) {
-            $this->error(__('Parameter %s can not be empty', 'ids'));
+        $project_id = $project_id ?: $this->request->post('project_id');
+        if (empty($project_id)) {
+            $this->error(__('Parameter %s can not be empty', 'project_id'));
         }
 
 
@@ -79,7 +79,7 @@ class Orgevent extends Backend
             '{经费保障}'
         );
         $data = $this->model
-        ->where('id',$ids)
+        ->where('id',$project_id)
         ->find();
 
         $replace = array(
@@ -109,4 +109,8 @@ class Orgevent extends Backend
         $this->success('即将开始下载', null, $file);
     }
     
+    
+    public function zhuohaoka(){
+        return $this->view->fetch();
+    }
 }

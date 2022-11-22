@@ -379,7 +379,13 @@ define(['jquery', 'bootstrap', 'backend', 'addtabs', 'adminlte', 'form'], functi
             });
 
             $(window).resize();
-
+            /**
+             * 隐藏某些菜单
+             */
+            if(!Fast.api.query('project_id')){
+                $('#gaigemingzi').hide();
+            }
+            
         },
         login: function () {
             var lastlogin = localStorage.getItem("lastlogin");

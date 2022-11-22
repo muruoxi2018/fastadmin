@@ -1,0 +1,52 @@
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('User_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-user_id" data-rule="required" data-source="user/user/index" data-field="nickname" class="form-control selectpage" name="row[user_id]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('School')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-school" class="form-control" name="row[school]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Reason')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-reason" class="form-control " rows="5" name="row[reason]" cols="50"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Cpy_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-cpy_id" data-rule="required" data-source="cpy/index" class="form-control selectpage" name="row[cpy_id]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Bpy_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-bpy_id" data-rule="required" data-source="bpy/index" class="form-control selectpage" name="row[bpy_id]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Cpz_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-cpz_id" data-rule="required" data-source="cpz/index" class="form-control selectpage" name="row[cpz_id]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Arbitration')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-arbitration" class="form-control datetimepicker" data-date-format="YYYY-MM-DD" data-use-current="true" name="row[arbitration]" type="text" value="{:date('Y-m-d')}">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-primary btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,192 @@
+/********************************
+*  1px 方案
+*********************************/
+/*1px 间隔线*/
+.public-line-1px{
+  content: " ";
+  height: 1px;
+  background-color: @public-partingLine;
+  -webkit-transform: scale(1, .3);
+  transform: scale(1, .3);
+  -webkit-transform-origin: left center;
+  transform-origin: left center;
+}
+/*1px下边线 - 用于列表子项*/
+.public-border-after{
+  content: " ";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: @public-partingLine;
+  -webkit-transform: scale(1, .3);
+  transform: scale(1, .3);
+  -webkit-transform-origin: left bottom;
+  transform-origin: left bottom;
+}
+/*1px边框 - 四周 边框*/
+.public-border-1px {
+  content: " ";
+  width: 250%;
+  height: 250%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid @public-aroundLine;
+  -webkit-transform: scale(0.4);
+  transform: scale(0.4);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  box-sizing: border-box;
+}
+/********************************
+*  文本
+*********************************/
+/*单行*/
+.public-ellipsis,.public-ellipsis-row1,.public-ellipsis[row] {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+/*2行...*/
+.public-line-clamp-2{
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp:2;
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical;
+  /* autoprefixer: on */
+  word-break: break-all;
+  padding: 0 1px
+}
+/*normal*/
+.public-white-space{
+  word-break: break-all;
+  white-space: normal
+}
+/*强制换行*/
+.public-word-break {
+  word-break: break-all;
+}
+
+/********************************
+*  图片 - 处理
+*********************************/
+/*图片 - 父容器*/
+.public-img-box {
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  position: relative;
+}
+
+/*图片 - 自身 - img标签*/
+.public-img,.public-img-box img {
+  width: 100%!important;
+  height: auto!important;
+  border: none !important;
+}
+
+/*图片 - 父容器  - 正方形 */
+.public-img-box-square,.public-img-box[square]{
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  position: relative;
+  height: 0;
+  padding-top: 100%;
+}
+
+/*图片 - 正方形 - 自身 - img标签*/
+.public-img-square,.public-img[square] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/********************************
+*  圆形
+*********************************/
+/*圆形*/
+.public-round {
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+
+/*圆形 容器 图片*/
+.public-round img, .public-round .public-img{
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+
+/*圆形 容器 1px*/
+.public-round .public-border-1px {
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+/********************************
+*  定位状态
+*********************************/
+/*定位状态 relative*/
+.public-position-relative,.public-position[relative]{
+  position: relative;
+}
+
+/*定位状态 absolute*/
+.public-position-absolute,.public-position[absolute] {
+  position: absolute;
+}
+
+
+/*新闻+图片*/
+.list-title{
+  font-size: @public-font-size-16;
+  overflow: hidden;
+  line-height:38px;
+  word-break: break-all;
+  white-space: normal;
+}
+.list-time {
+  font-size: .36rem;
+  color: @public-color-lightGray;
+}
+/*商品列表*/
+.public-title {
+  //font-weight:@public-font-weight-bold;
+  font-size: @public-font-size-17;
+  color: @public-color-blank;
+  overflow: hidden;
+  line-height:38px;
+  word-break: break-all;
+  white-space: normal;
+}
+/*价格主色*/
+.public-color-price,.public-color[price] {
+  font-weight:@public-font-weight-bold;
+  font-size: @public-font-size-17;
+  color: @public-color-price;
+  padding-right: 10px;
+}
+/*市场价/原价*/
+.public-color-price-del,.public-color[price-del] {
+  color: @public-color-priceDel;
+  font-size: @public-font-size-14;
+}
+
+.personal-list{
+  width: 172px;
+}
+.personal-list img{
+  width: 176px;
+  height: 176px;
+  border-radius: 10px;
+}

@@ -35,7 +35,7 @@
                     <div class="form-group">
                         <label class="control-label col-xs-12 col-sm-2">{:__('字段')}:</label>
                         <div class="col-xs-12 col-sm-8">
-                            <input name="row[fields]" id="field_input" type="hidden" value='{$row['fields']}'>
+                            <input id="field_input" type="hidden" value='{if condition='empty($row)'}[{"field":"code","value":"FW0001","top":"211px","left":"243px"}]{else:}{$row['fields']}{/if}' name="row[fields]">
                             <a class="btn btn-default field" href="javascript:;" data-field="code" data-value="FW0001">赛号</a>
                             <a class="btn btn-default field" href="javascript:;" data-field="group" data-value="男子组">组别</a>
                             <a class="btn btn-default field" href="javascript:;" data-field="name" data-value="张三">姓名</a>

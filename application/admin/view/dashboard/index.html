@@ -160,13 +160,13 @@
     }
 </style>
 <div class="panel panel-default panel-intro">
-    <div class="panel-heading">
+    <!-- <div class="panel-heading">
         {:build_heading(null, false)}
         <ul class="nav nav-tabs">
             <li class="active"><a href="#one" data-toggle="tab">{:__('Dashboard')}</a></li>
             <li><a href="#two" data-toggle="tab">{:__('Custom')}</a></li>
         </ul>
-    </div>
+    </div> -->
     <div class="panel-body">
         <div id="myTabContent" class="tab-content">
             <div class="tab-pane fade active in" id="one">
@@ -186,7 +186,7 @@
                             <span class="sm-st-icon st-violet"><i class="fa fa-magic"></i></span>
                             <div class="sm-st-info">
                                 <span>{$totaladdon}</span>
-                                {:__('Total addon')}
+                                总比赛场次
                             </div>
                         </div>
                     </div>
@@ -195,7 +195,7 @@
                             <span class="sm-st-icon st-blue"><i class="fa fa-leaf"></i></span>
                             <div class="sm-st-info">
                                 <span>{$attachmentnums}</span>
-                                {:__('Total attachment')}
+                                公开培训场次
                             </div>
                         </div>
                     </div>
@@ -204,7 +204,7 @@
                             <span class="sm-st-icon st-green"><i class="fa fa-user"></i></span>
                             <div class="sm-st-info">
                                 <span>{$totaladmin}</span>
-                                {:__('Total admin')}
+                                入驻社团数量
                             </div>
                         </div>
                     </div>
@@ -293,14 +293,14 @@
                             <div class="panel-body">
                                 <div class="panel-title">
                                     <span class="label label-primary pull-right">{:__('Real time')}</span>
-                                    <h5>{:__('Working addon count')}</h5>
+                                    <h5>裁判员大数据库</h5>
                                 </div>
                                 <div class="panel-content">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <h1 class="no-margins">{$totalworkingaddon}</h1>
-                                            <div class="font-bold"><i class="fa fa-magic"></i>
-                                                <small>{:__('Working addon count tips')}</small>
+                                            <h1 class="no-margins">{$totalworkingaddon}<small style="color: inherit;">人</small></h1>
+                                            <div class="font-bold">
+                                                <small>已认证裁判员（持有相关证件）数量</small>
                                             </div>
                                         </div>
                                     </div>
@@ -313,20 +313,14 @@
                             <div class="panel-body">
                                 <div class="ibox-title">
                                     <span class="label label-primary pull-right">{:__('Real time')}</span>
-                                    <h5>{:__('Database count')}</h5>
+                                    <h5>编排员大数据库</h5>
                                 </div>
                                 <div class="ibox-content">
                                     <div class="row">
-                                        <div class="col-md-6">
-                                            <h1 class="no-margins">{$dbtablenums}</h1>
-                                            <div class="font-bold"><i class="fa fa-database"></i>
-                                                <small>{:__('Database table nums')}</small>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <h1 class="no-margins">{$dbsize|format_bytes=###,'',0}</h1>
-                                            <div class="font-bold"><i class="fa fa-filter"></i>
-                                                <small>{:__('Database size')}</small>
+                                        <div class="col-md-12">
+                                            <h1 class="no-margins">{$dbtablenums}<small style="color: inherit;">人</small></h1>
+                                            <div class="font-bold">
+                                                <small>已核实编排员（具有编排能力）数量</small>
                                             </div>
                                         </div>
                                     </div>
@@ -340,21 +334,21 @@
                             <div class="panel-body">
                                 <div class="ibox-title">
                                     <span class="label label-primary pull-right">{:__('Real time')}</span>
-                                    <h5>{:__('Attachment count')}</h5>
+                                    <h5>志愿者大数据库</h5>
                                 </div>
                                 <div class="ibox-content">
 
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <h1 class="no-margins">{$attachmentnums}</h1>
-                                            <div class="font-bold"><i class="fa fa-files-o"></i>
-                                                <small>{:__('Attachment nums')}</small>
+                                            <h1 class="no-margins">{$attachmentnums}<small style="color: inherit;">人次</small></h1>
+                                            <div class="font-bold">
+                                                <small>已承担赛事服务</small>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <h1 class="no-margins">{$attachmentsize|format_bytes=###,'',0}</h1>
-                                            <div class="font-bold"><i class="fa fa-filter"></i>
-                                                <small>{:__('Attachment size')}</small>
+                                            <h1 class="no-margins">1320<small style="color: inherit;">人</small></h1>
+                                            <div class="font-bold">
+                                                <small>愿担任志愿者服务</small>
                                             </div>
                                         </div>
                                     </div>
@@ -363,25 +357,26 @@
                         </div>
                     </div>
                     <div class="col-xs-6 col-md-3">
-                        <div class="panel bg-green-gradient no-border">
+                        <div class="panel bg-red-gradient no-border">
                             <div class="panel-body">
                                 <div class="ibox-title">
                                     <span class="label label-primary pull-right">{:__('Real time')}</span>
-                                    <h5>{:__('Picture count')}</h5>
+                                    <h5>{:__('禁赛选手统计')}</h5>
                                 </div>
                                 <div class="ibox-content">
 
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <h1 class="no-margins">{$picturenums}</h1>
-                                            <div class="font-bold"><i class="fa fa-picture-o"></i>
-                                                <small>{:__('Picture nums')}</small>
+                                            <h1 class="no-margins">
+                                                {$picturenums}<small style="color: inherit;">人</small></h1>
+                                            <div class="font-bold">
+                                                <small>已被列入黑名单</small>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <h1 class="no-margins">{$picturesize|format_bytes=###,'',0}</h1>
-                                            <div class="font-bold"><i class="fa fa-filter"></i>
-                                                <small>{:__('Picture size')}</small>
+                                            <h1 class="no-margins">22<small style="color: inherit;">家</small></h1></h1>
+                                            <div class="font-bold">
+                                                <small>组织已同步数据</small>
                                             </div>
                                         </div>
                                     </div>

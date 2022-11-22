@@ -1,7 +1,7 @@
 <?php
 
 return array (
-  'name' => '我的网站',
+  'name' => '枫林智运',
   'beian' => '',
   'cdnurl' => '',
   'version' => '1.0.1',
@@ -20,6 +20,7 @@ return array (
     'article' => '文章',
     'test' => 'Test',
     'grading' => '等级',
+    'cpy' => '裁判员',
   ),
   'configgroup' => 
   array (
@@ -42,6 +43,6 @@ return array (
     'category2' => '分类二',
     'custom' => '自定义',
   ),
-  'keywords' => '',
-  'description' => '',
+  'keywords' => '甘肃枫林智运科技文化有限公司',
+  'description' => '甘肃枫林智运科技文化有限公司',
 );

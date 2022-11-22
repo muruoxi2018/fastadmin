@@ -9,7 +9,7 @@ class Index extends Frontend
 
     protected $noNeedLogin = '*';
     protected $noNeedRight = '*';
-    protected $layout = 'layout_index';
+    protected $layout = 'default';
 
     public function index()
     {
@@ -18,9 +18,9 @@ class Index extends Frontend
         return $this->view->fetch();
     }
 
-    public function intro(){
-        $this->view->title = '关于我们';
-        return $this->view->fetch();
-    }
+    // public function intro(){
+    //     $this->view->title = '关于我们';
+    //     return $this->view->fetch();
+    // }
 
 }

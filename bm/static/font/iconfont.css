@@ -1,0 +1,49 @@
+@font-face {
+  font-family: 'iconfont';  /* project id 2075006 */
+  src: url('https://at.alicdn.com/t/font_2075006_q4h5r83ye7j.eot');
+  src: url('https://at.alicdn.com/t/font_2075006_q4h5r83ye7j.eot?#iefix') format('embedded-opentype'),
+  url('https://at.alicdn.com/t/font_2075006_q4h5r83ye7j.woff2') format('woff2'),
+  url('https://at.alicdn.com/t/font_2075006_q4h5r83ye7j.woff') format('woff'),
+  url('https://at.alicdn.com/t/font_2075006_q4h5r83ye7j.ttf') format('truetype'),
+  url('https://at.alicdn.com/t/font_2075006_q4h5r83ye7j.svg#iconfont') format('svg');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-shezhi1:before {
+  content: "\e600";
+}
+
+.icon-weixinzhifu:before {
+  content: "\e689";
+}
+
+.icon-cuo:before {
+  content: "\e611";
+}
+
+.icon-shouji:before {
+  content: "\e650";
+}
+
+.icon-suo:before {
+  content: "\e60a";
+}
+
+.icon-arrow:before {
+  content: "\e61b";
+}
+
+.icon-sousuo:before {
+  content: "\e647";
+}
+
+.icon-jiantou:before {
+  content: "\e610";
+}
+

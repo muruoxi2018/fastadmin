@@ -1,0 +1,202 @@
+/*盒子 - 基座*/
+.public-flexbox {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+
+}
+
+/*盒子 - 子项目 - 扩展的量 - 自适应大小*/
+.public-flexbox-flex1{
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+/*盒子 - 项目定位方向 - 水平 */
+.public-flexbox-row,.public-flexbox[row]{
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+/*盒子 - 项目定位方向 - 水平+右端*/
+.public-flex-direction-row-reverse,.public-flex-direction[row-reverse] {
+  -webkit-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
+/*盒子 - 项目定位方向 - 垂直 */
+.public-flexbox-column,.public-flexbox[column] {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+/*盒子 - 项目定位方向 - 垂直+起点在下*/
+.public-flex-direction-column-reverse,.public-flex-direction[column-reverse] {
+  -webkit-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+}
+
+/*盒子 - 子元素的换行方式 - 不换行 */
+.public-flexbox-nowrap,.public-flexbox[nowrap] {
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+
+/*盒子 - 子元素的换行方式 - 换行 */
+.public-flexbox-wrap,.public-flexbox[wrap] {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+
+
+/*盒子 - 子元素在主轴上的对齐方式 - 项目位于容器的中心*/
+.public-flexbox-justify-center,.public-flexbox[justify-center] {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+/*盒子 - 子元素在主轴上的对齐方式 - 项目位于容器的开头 */
+.public-flexbox-justify-start,.public-flexbox[justify-start] {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+/*盒子 - 子元素在主轴上的对齐方式 - 项目位于容器的结尾*/
+.public-flexbox-justify-end,.public-flexbox[justify-end] {
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+/*盒子 - 子元素在主轴上的对齐方式 - 项目位于容器的两端 - 两端不留白*/
+.public-flexbox-justify-between,.public-flexbox[justify-between] {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+/*盒子 - 子元素在主轴上的对齐方式 - 项目位于容器的两端 - 两端留白*/
+.public-flexbox-justify-around,.public-flexbox[justify-around] {
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+/*盒子 - 子元素在交叉轴上的对齐方式 - 项目被拉伸以适应容器 - 一般用于项目等高*/
+.public-flexbox-align-stretch,.public-flexbox[align-stretch] {
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+
+/*盒子 - 子元素在交叉轴上的对齐方式 - 项目位于容器的中心*/
+.public-flexbox-align-center,.public-flexbox[align-center] {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+/*盒子 - 子元素在交叉轴上的对齐方式 - 项目位于容器的开头*/
+.public-flexbox-align-start,.public-flexbox[align-start]{
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+/*盒子 - 子元素在交叉轴上的对齐方式 - 项目位于容器的开头*/
+.public-flexbox-align-end,.public-flexbox[align-end] {
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+
+/*盒子 - 子元素在交叉轴上的对齐方式 - 项目位于容器的基线上*/
+.public-flexbox-align-baseline,.public-flexbox[align-baseline] {
+  -webkit-box-align: baseline;
+  -webkit-align-items: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+}
+
+/*盒子 - 有多根轴线时的对齐方式 - 撑满*/
+.public-flexbox-align-content-stretch,.public-flexbox[content-stretch] {
+  -webkit-box-align: baseline;
+  -webkit-align-items: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+}
+
+/*盒子 - 有多根轴线时的对齐方式 - 居中*/
+.public-flexbox-align-content-center,.public-flexbox[content-center] {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+/*盒子 - 有多根轴线时的对齐方式 - 开头*/
+.public-flexbox-align-content-start,.public-flexbox[content-start]{
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+}
+
+/*盒子 - 有多根轴线时的对齐方式 - 结尾*/
+.public-flexbox-align-content-end,.public-flexbox[content-end] {
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+
+/*盒子 - 有多根轴线时的对齐方式 - 两端*/
+.public-flexbox-align-content-between,.public-flexbox[content-between] {
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+
+/*盒子 - 有多根轴线时的对齐方式 - 两端留白*/
+.public-flexbox-align-content-around,.public-flexbox[content-around] {
+  -webkit-box-align: baseline;
+  -webkit-align-items: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+}
+
+
+/********************************
+*  定位状态
+*********************************/
+/*定位状态 relative*/
+.public-position-relative,.public-position[relative]{
+  position: relative;
+}
+
+/*定位状态 absolute*/
+.public-position-absolute,.public-position[absolute] {
+  position: absolute;
+}

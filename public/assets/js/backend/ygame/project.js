@@ -51,7 +51,6 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                                     classname: 'btn btn-xs btn-warning btn-dialog',
                                     extend:'data-area=\'["1100px","700px"]\'',
                                     icon: 'fa fa-microchip',
-
                                     url: 'ygame/group/index?project_id={id}'
                                 },
                                 {
@@ -82,7 +81,18 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                                     extend:'data-area=\'["1000px","700px"]\'',
                                     icon: 'fa fa-th-list ',
                                     url: 'ygame/record/index?project_id={id}'
-                                }],
+                                },
+                                {
+                                    name: 'bianpai',
+                                    title: __('比赛编排'),
+                                    text:'比赛编排',
+                                    classname: 'btn btn-xs btn-success btn-addtabs',
+                                    extend:'data-area=\'["1000px","700px"]\'',
+                                    icon: 'fa fa-paper-plane',
+                                    url: 'ygame/record/index?project_id={id}'
+                                }
+                            ],
+                                
                             formatter: Table.api.formatter.operate
                         }
                     ]

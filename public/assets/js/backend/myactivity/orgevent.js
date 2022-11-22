@@ -49,9 +49,10 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                                 {
                                     name: 'export',
                                     title: __('Export order book'),
+                                    text:'导出秩序册',
                                     classname: 'btn btn-xs btn-ajax btn-info',
                                     icon: 'fa fa-folder-o',
-                                    url:'myactivity/orgevent/export',
+                                    url:'myactivity/orgevent/export?project_id={id}',
                                     // dropdown: '更多',//如果包含dropdown，将会以下拉列表的形式展示
                                     success: function (data, ret) {
                                         //Layer.alert(ret.msg);
@@ -73,10 +74,29 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                                     }
                                 },
                                 {
+                                    name: 'detail',
+                                    title: __('组别管理'),
+                                    text:'组别管理',
+                                    classname: 'btn btn-xs btn-warning btn-dialog',
+                                    extend:'data-area=\'["1100px","700px"]\'',
+                                    icon: 'fa fa-microchip',
+                                    url: 'myactivity/group/index?project_id={id}'
+                                },
+                                {
+                                    name: 'detail',
+                                    title: __('选手管理'),
+                                    text:'选手管理',
+                                    classname: 'btn btn-xs btn-info btn-dialog',
+                                    extend:'data-area=\'["1000px","700px"]\'',
+                                    icon: 'fa fa-th-list ',
+                                    url: 'myactivity/umpire/index?project_id={id}'
+                                },
+                                {
                                     name: 'achievement',
-                                    title: __('Achievement'),
-                                    classname: 'btn btn-xs btn-warning btn-addtabs',
-                                    icon: 'fa fa-male',
+                                    title: __('成绩管理'),
+                                    text:'成绩管理',
+                                    classname: 'btn btn-xs btn-primary btn-dialog',
+                                    icon: 'fa fa-file-text-o',
                                     url:'myactivity/achievement/index'
                                 }
                             ],
